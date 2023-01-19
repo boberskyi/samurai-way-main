@@ -26,7 +26,8 @@ margin-right: 12px;
 
   transition: .3s ease all;
 }
-.hSmallItm:hover .icon {
+.hSmallItm:hover .icon,
+.hSmallItm.active .icon {
   transition: .3s ease all;
   fill: #2d5be3;
 }

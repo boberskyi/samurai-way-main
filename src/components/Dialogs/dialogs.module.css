@@ -1,0 +1,48 @@
+.dialogs {
+
+}
+
+.dialogsWrap {
+display: flex;
+  justify-content: space-between;
+}
+.dialogsList {
+max-width: 400px;
+  min-width: 400px;
+  width: 400px;
+  margin: 0 20px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+}
+.dialogsListHeading {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+}
+.dialogsListHeading:before {
+  content: "";
+  height: 3px;
+  width: 8px;
+  background-color: #2d5be3;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.dialogsListHeading:after {
+  content: "";
+  height: 3px;
+  width: 18px;
+  background-color: #2d5be3;
+  border-radius: 4px;
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+}
+.dialogsMsgs {
+
+}
