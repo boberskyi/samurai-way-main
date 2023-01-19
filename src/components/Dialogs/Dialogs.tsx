@@ -8,7 +8,13 @@ export const Dialogs = () => {
         <div className={dStl.dialogsWrap}>
           <aside className={dStl.dialogsList}>
 <h2 className={dStl.dialogsListHeading}>Messages</h2>
+            <div className={dStl.dialogsFilter}>
+<button className={dStl.dialogsFilterBtn}>Active</button>
+              <button className={dStl.dialogsFilterBtn}>Newest</button>
+              <button className={dStl.dialogsFilterBtn}>Popular</button>
+            </div>
           </aside>
+
           <div className={dStl.dialogsMsgs}>
 
           </div>

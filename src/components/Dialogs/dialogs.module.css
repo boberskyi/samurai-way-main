@@ -43,6 +43,28 @@ max-width: 400px;
   left: 10px;
   bottom: 0;
 }
+.dialogsFilter {
+margin-bottom: 20px;
+  display: flex;
+  gap: 5px;
+}
+.dialogsFilterBtn {
+  font-size: 13px;
+  padding: 5px 13px;
+  font-weight: 500;
+  color: #646464;
+  border-radius: 4px;
+  border: 1px solid #e5e5e5;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all .3s ease 0s;
+}
+.dialogsFilterBtn:hover,
+.dialogsFilterBtn.active {
+  border-color: #34b7f1;
+  background-color: #34b7f1;
+  color: #fff;
+}
 .dialogsMsgs {
 
 }
