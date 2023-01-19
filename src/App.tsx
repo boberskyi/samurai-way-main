@@ -17,7 +17,6 @@ const App = () => {
         <Route path='/profile' component={Profile} />
         <Route path='/messages' component={Dialogs} />
         <Route path='/blog' component={Blog} />
-
         <Route path='/music' component={Music} />
         <Route path='/settings' component={Settings} />
       </div>

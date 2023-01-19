@@ -1,4 +1,4 @@
-import blogStl from "../Blog/blog.module.css";
+import blogStl from "../blog.module.css";
 
 export type PostsPropsType = {
   dataPosts: PostPropsType[]
