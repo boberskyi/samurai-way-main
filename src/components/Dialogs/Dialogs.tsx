@@ -7,6 +7,7 @@ import ava4 from './ava4.jpg';
 import ava5 from './ava5.jpg';
 import ava6 from './ava6.jpg';
 import ava7 from './ava7.jpg';
+import {NavLink} from "react-router-dom";
 
 export const Dialogs = () => {
   return (
@@ -24,89 +25,89 @@ export const Dialogs = () => {
 
             <div className={dStl.membersList}>
 
-              <div className={dStl.membersListItm + ' ' + dStl.active}>
-                <div className={dStl.memberAvatar}>
+              <NavLink to="/dialogs/1" className={dStl.membersListItm + ' ' + dStl.active}>
+                <span className={dStl.memberAvatar}>
                   <img src={ava1} alt="Profile photo"/>
-                </div>
-                <div className={dStl.memberDesript}>
-                  <h3 className={dStl.descriptHeading}>Rebeca Powel</h3>
-                  <p className={dStl.descriptLastVisit}>
+                </span>
+                <span className={dStl.memberDesript}>
+                  <span className={dStl.descriptHeading}>Rebeca Powel</span>
+                  <span className={dStl.descriptLastVisit}>
                     3 days ago
-                  </p>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </NavLink>
 
-              <div className={dStl.membersListItm}>
-                <div className={dStl.memberAvatar}>
+              <NavLink to="/dialogs/2" className={dStl.membersListItm}>
+                <span className={dStl.memberAvatar}>
                   <img src={ava2} alt="Profile photo"/>
-                </div>
-                <div className={dStl.memberDesript}>
-                  <h3 className={dStl.descriptHeading}>Andre Dubus</h3>
-                  <p className={dStl.descriptLastVisit}>
+                </span>
+                <span className={dStl.memberDesript}>
+                  <span className={dStl.descriptHeading}>Andre Dubus</span>
+                  <span className={dStl.descriptLastVisit}>
                     8 days ago
-                  </p>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </NavLink>
 
-              <div className={dStl.membersListItm}>
-                <div className={dStl.memberAvatar}>
+              <NavLink to="/dialogs/3" className={dStl.membersListItm}>
+                <span className={dStl.memberAvatar}>
                   <img src={ava3} alt="Profile photo"/>
-                </div>
-                <div className={dStl.memberDesript}>
-                  <h3 className={dStl.descriptHeading}>John Caius</h3>
-                  <p className={dStl.descriptLastVisit}>
+                </span>
+                <span className={dStl.memberDesript}>
+                  <span className={dStl.descriptHeading}>John Caius</span>
+                  <span className={dStl.descriptLastVisit}>
                     1 week ago
-                  </p>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </NavLink>
 
-              <div className={dStl.membersListItm}>
-                <div className={dStl.memberAvatar}>
+              <NavLink to="/dialogs/4" className={dStl.membersListItm}>
+                <span className={dStl.memberAvatar}>
                   <img src={ava4} alt="Profile photo"/>
-                </div>
-                <div className={dStl.memberDesript}>
-                  <h3 className={dStl.descriptHeading}>Wynonna Judd</h3>
-                  <p className={dStl.descriptLastVisit}>
+                </span>
+                <span className={dStl.memberDesript}>
+                  <span className={dStl.descriptHeading}>Wynonna Judd</span>
+                  <span className={dStl.descriptLastVisit}>
                     1 month ago
-                  </p>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </NavLink>
 
-              <div className={dStl.membersListItm}>
-                <div className={dStl.memberAvatar}>
+              <NavLink to="/dialogs/5" className={dStl.membersListItm}>
+                <span className={dStl.memberAvatar}>
                   <img src={ava5} alt="Profile photo"/>
-                </div>
-                <div className={dStl.memberDesript}>
-                  <h3 className={dStl.descriptHeading}>Keir Dullea</h3>
-                  <p className={dStl.descriptLastVisit}>
+                </span>
+                <span className={dStl.memberDesript}>
+                  <span className={dStl.descriptHeading}>Keir Dullea</span>
+                  <span className={dStl.descriptLastVisit}>
                     1 month ago
-                  </p>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </NavLink>
 
-              <div className={dStl.membersListItm}>
-                <div className={dStl.memberAvatar}>
+              <NavLink to="/dialogs/6" className={dStl.membersListItm}>
+                <span className={dStl.memberAvatar}>
                   <img src={ava6} alt="Profile photo"/>
-                </div>
-                <div className={dStl.memberDesript}>
-                  <h3 className={dStl.descriptHeading}>Cecelia Cichan</h3>
-                  <p className={dStl.descriptLastVisit}>
+                </span>
+                <span className={dStl.memberDesript}>
+                  <span className={dStl.descriptHeading}>Cecelia Cichan</span>
+                  <span className={dStl.descriptLastVisit}>
                     5 months ago
-                  </p>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </NavLink>
 
-              <div className={dStl.membersListItm}>
-                <div className={dStl.memberAvatar}>
+              <NavLink to="/dialogs/7" className={dStl.membersListItm}>
+                <span className={dStl.memberAvatar}>
                   <img src={ava7} alt="Profile photo"/>
-                </div>
-                <div className={dStl.memberDesript}>
-                  <h3 className={dStl.descriptHeading}>Ron Faucheux</h3>
-                  <p className={dStl.descriptLastVisit}>
+                </span>
+                <span className={dStl.memberDesript}>
+                  <span className={dStl.descriptHeading}>Ron Faucheux</span>
+                  <span className={dStl.descriptLastVisit}>
                     10 months ago
-                  </p>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </NavLink>
 
 
             </div>

@@ -15,7 +15,7 @@ const App = () => {
       <Header />
       <div className={"app-wrapper-main"}>
         <Route path='/profile' component={Profile} />
-        <Route path='/messages' component={Dialogs} />
+        <Route path='/dialogs' component={Dialogs} />
         <Route path='/blog' component={Blog} />
         <Route path='/music' component={Music} />
         <Route path='/settings' component={Settings} />

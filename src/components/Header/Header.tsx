@@ -1,8 +1,6 @@
 import React from "react";
 import headerStl from './header.module.css';
 import {NavLink} from "react-router-dom";
-import {FaMusic, FaPencilAlt} from "react-icons/fa";
-import { IoIosSettings } from "react-icons/io";
 import Icofont from "react-icofont";
 
 export const Header = () => {
@@ -28,7 +26,7 @@ export const Header = () => {
           </NavLink>
           <NavLink className={headerStl.hSmallItm}
                    activeClassName={headerStl.active}
-                   to="/messages">
+                   to="/dialogs">
             <Icofont icon="speech-comments" />
           </NavLink>
           <NavLink className={headerStl.hSmallItm}
