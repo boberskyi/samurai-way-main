@@ -1,0 +1,50 @@
+.main {
+}
+
+.header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px;
+  padding: 180px 35px 35px 50px;
+  position: relative;
+  margin-bottom: 30px;
+  z-index: 0;
+  background-image: url(profile-cover.jpg);
+  display: flex;
+  align-items: flex-end;
+}
+.header:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to top,rgba(0,0,0,.9),transparent);
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.info {
+  display: flex;
+}
+.img {
+  position: relative;
+  margin-right: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 5px;
+  display: inline-block;
+  width: 125px;
+}
+.img:after {
+  content: url(round_shape1.png);
+  position: absolute;
+  top: -4px;
+  left: -4px;
+}
+.img img {
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+}
