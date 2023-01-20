@@ -16,18 +16,38 @@ type DialogItmPropsType = {
   online: string
 }
 
-const DialogItm = (props:DialogItmPropsType) => {
+const DialogItm = (props: DialogItmPropsType) => {
   let linkTo = `/dialogs/${props.id}`;
   return (
     <NavLink to={linkTo} className={dStl.membersListItm}>
                 <span className={dStl.memberAvatar}>
-                  <img src={props.ava} alt={props.name} />
+                  <img src={props.ava} alt={props.name}/>
                 </span>
       <span className={dStl.memberDesript}>
                   <span className={dStl.descriptHeading}>{props.name}</span>
                   <span className={dStl.descriptLastVisit}>{props.online}</span>
                 </span>
     </NavLink>
+  )
+}
+
+type MyMessagePropType = {
+  msg: string
+}
+
+const MyMessage = (props:MyMessagePropType) => {
+  return (
+    <div className={dStl.dialogsMsgMy}>{props.msg}</div>
+  )
+}
+
+type FriendsMessagePropsType = {
+  msg: string
+}
+
+const FriendsMessage = (props:FriendsMessagePropsType) => {
+  return (
+    <div className={dStl.dialogsMsgYr}>{props.msg}</div>
   )
 }
 
@@ -46,34 +66,23 @@ export const Dialogs = () => {
             </div>
 
             <div className={dStl.membersList}>
-              <DialogItm id={1} ava={ava1} name="Rebeca Powel" online="3 days ago" />
-              <DialogItm id={2} ava={ava2} name="Andre Dubus" online="8 days ago" />
-              <DialogItm id={3} ava={ava3} name="John Caius" online="1 week ago" />
-              <DialogItm id={4} ava={ava4} name="Wynonna Judd" online="1 month ago" />
-              <DialogItm id={5} ava={ava5} name="Keir Dullea" online="1 month ago" />
-              <DialogItm id={6} ava={ava6} name="Cecelia Cichan" online="5 months ago" />
-              <DialogItm id={7} ava={ava7} name="Ron Faucheux" online="10 months ago" />
+              <DialogItm id={1} ava={ava1} name="Rebeca Powel" online="3 days ago"/>
+              <DialogItm id={2} ava={ava2} name="Andre Dubus" online="8 days ago"/>
+              <DialogItm id={3} ava={ava3} name="John Caius" online="1 week ago"/>
+              <DialogItm id={4} ava={ava4} name="Wynonna Judd" online="1 month ago"/>
+              <DialogItm id={5} ava={ava5} name="Keir Dullea" online="1 month ago"/>
+              <DialogItm id={6} ava={ava6} name="Cecelia Cichan" online="5 months ago"/>
+              <DialogItm id={7} ava={ava7} name="Ron Faucheux" online="10 months ago"/>
             </div>
           </aside>
 
           <div className={dStl.dialogsMsgs}>
 
-            <div className={dStl.dialogsMsgMy}>
-              My message
-            </div>
-
-            <div className={dStl.dialogsMsgYr}>
-              Friends message
-            </div>
-            <div className={dStl.dialogsMsgYr}>
-              Friends message
-            </div>
-            <div className={dStl.dialogsMsgMy}>
-              My message
-            </div>
-            <div className={dStl.dialogsMsgMy}>
-              My message
-            </div>
+            <MyMessage msg="My message 1" />
+            <FriendsMessage msg="Friends message 1" />
+            <FriendsMessage msg="Friends message 2" />
+            <MyMessage msg="My message 2" />
+            <MyMessage msg="My message 3" />
 
           </div>
         </div>
