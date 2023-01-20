@@ -9,6 +9,28 @@ import ava6 from './ava6.jpg';
 import ava7 from './ava7.jpg';
 import {NavLink} from "react-router-dom";
 
+type DialogItmPropsType = {
+  id: number,
+  ava: string,
+  name: string,
+  online: string
+}
+
+const DialogItm = (props:DialogItmPropsType) => {
+  let linkTo = `/dialogs/${props.id}`;
+  return (
+    <NavLink to={linkTo} className={dStl.membersListItm}>
+                <span className={dStl.memberAvatar}>
+                  <img src={props.ava} alt={props.name} />
+                </span>
+      <span className={dStl.memberDesript}>
+                  <span className={dStl.descriptHeading}>{props.name}</span>
+                  <span className={dStl.descriptLastVisit}>{props.online}</span>
+                </span>
+    </NavLink>
+  )
+}
+
 export const Dialogs = () => {
   return (
     <div className={dStl.dialogs}>
@@ -24,92 +46,13 @@ export const Dialogs = () => {
             </div>
 
             <div className={dStl.membersList}>
-
-              <NavLink to="/dialogs/1" className={dStl.membersListItm + ' ' + dStl.active}>
-                <span className={dStl.memberAvatar}>
-                  <img src={ava1} alt="Profile photo"/>
-                </span>
-                <span className={dStl.memberDesript}>
-                  <span className={dStl.descriptHeading}>Rebeca Powel</span>
-                  <span className={dStl.descriptLastVisit}>
-                    3 days ago
-                  </span>
-                </span>
-              </NavLink>
-
-              <NavLink to="/dialogs/2" className={dStl.membersListItm}>
-                <span className={dStl.memberAvatar}>
-                  <img src={ava2} alt="Profile photo"/>
-                </span>
-                <span className={dStl.memberDesript}>
-                  <span className={dStl.descriptHeading}>Andre Dubus</span>
-                  <span className={dStl.descriptLastVisit}>
-                    8 days ago
-                  </span>
-                </span>
-              </NavLink>
-
-              <NavLink to="/dialogs/3" className={dStl.membersListItm}>
-                <span className={dStl.memberAvatar}>
-                  <img src={ava3} alt="Profile photo"/>
-                </span>
-                <span className={dStl.memberDesript}>
-                  <span className={dStl.descriptHeading}>John Caius</span>
-                  <span className={dStl.descriptLastVisit}>
-                    1 week ago
-                  </span>
-                </span>
-              </NavLink>
-
-              <NavLink to="/dialogs/4" className={dStl.membersListItm}>
-                <span className={dStl.memberAvatar}>
-                  <img src={ava4} alt="Profile photo"/>
-                </span>
-                <span className={dStl.memberDesript}>
-                  <span className={dStl.descriptHeading}>Wynonna Judd</span>
-                  <span className={dStl.descriptLastVisit}>
-                    1 month ago
-                  </span>
-                </span>
-              </NavLink>
-
-              <NavLink to="/dialogs/5" className={dStl.membersListItm}>
-                <span className={dStl.memberAvatar}>
-                  <img src={ava5} alt="Profile photo"/>
-                </span>
-                <span className={dStl.memberDesript}>
-                  <span className={dStl.descriptHeading}>Keir Dullea</span>
-                  <span className={dStl.descriptLastVisit}>
-                    1 month ago
-                  </span>
-                </span>
-              </NavLink>
-
-              <NavLink to="/dialogs/6" className={dStl.membersListItm}>
-                <span className={dStl.memberAvatar}>
-                  <img src={ava6} alt="Profile photo"/>
-                </span>
-                <span className={dStl.memberDesript}>
-                  <span className={dStl.descriptHeading}>Cecelia Cichan</span>
-                  <span className={dStl.descriptLastVisit}>
-                    5 months ago
-                  </span>
-                </span>
-              </NavLink>
-
-              <NavLink to="/dialogs/7" className={dStl.membersListItm}>
-                <span className={dStl.memberAvatar}>
-                  <img src={ava7} alt="Profile photo"/>
-                </span>
-                <span className={dStl.memberDesript}>
-                  <span className={dStl.descriptHeading}>Ron Faucheux</span>
-                  <span className={dStl.descriptLastVisit}>
-                    10 months ago
-                  </span>
-                </span>
-              </NavLink>
-
-
+              <DialogItm id={1} ava={ava1} name="Rebeca Powel" online="3 days ago" />
+              <DialogItm id={2} ava={ava2} name="Andre Dubus" online="8 days ago" />
+              <DialogItm id={3} ava={ava3} name="John Caius" online="1 week ago" />
+              <DialogItm id={4} ava={ava4} name="Wynonna Judd" online="1 month ago" />
+              <DialogItm id={5} ava={ava5} name="Keir Dullea" online="1 month ago" />
+              <DialogItm id={6} ava={ava6} name="Cecelia Cichan" online="5 months ago" />
+              <DialogItm id={7} ava={ava7} name="Ron Faucheux" online="10 months ago" />
             </div>
           </aside>
 
