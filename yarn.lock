@@ -1881,6 +1881,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-icofont@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/react-icofont/-/react-icofont-1.0.1.tgz#68c9d9a5bfa9db56fdd578bd84843ff5e1a31b91"
+  integrity sha512-YhjnSl6lTqGmR+3nR93PZ4g+EFmPa3PNREusODhWht2osSn2dkI24+slNcOtO4nkgPr1uqukPJEoJPW5eqpHoA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-redux@7.1.22", "@types/react-redux@^7.1.20":
   version "7.1.22"
   resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.1.22.tgz#0eab76a37ef477cc4b53665aeaf29cb60631b72a"
@@ -7776,6 +7783,11 @@ react-fast-compare@^2.0.1:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
+
+react-icofont@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/react-icofont/-/react-icofont-1.0.19.tgz#bc43d148f9a14d170b6004cc6338db7366566e56"
+  integrity sha512-vuTiPDJ5nKJsiWcMk6GO6VyYMKR9E+T0V8a1J6ncU+iPxy9ht+nXiP6JbmPy155oazbGR/VmqzBDwKpRJP4oIQ==
 
 react-icons@^4.7.1:
   version "4.7.1"

@@ -1,10 +1,9 @@
 import React from "react";
 import headerStl from './header.module.css';
 import {NavLink} from "react-router-dom";
-import {FaMusic, FaPencilAlt, FaRegUser} from "react-icons/fa";
-import { BiMessageAlt } from "react-icons/bi";
+import {FaMusic, FaPencilAlt} from "react-icons/fa";
 import { IoIosSettings } from "react-icons/io";
-
+import Icofont from "react-icofont";
 
 export const Header = () => {
   return (
@@ -20,31 +19,32 @@ export const Header = () => {
         </button>
       </div>
 
+
       <nav className={headerStl.sidebarMenuToggle}>
           <NavLink className={headerStl.hSmallItm}
                    activeClassName={headerStl.active}
                    to="/profile">
-            <FaRegUser className={headerStl.icon}/>
+            <Icofont icon="users-alt-4"/>
           </NavLink>
           <NavLink className={headerStl.hSmallItm}
                    activeClassName={headerStl.active}
                    to="/messages">
-            <BiMessageAlt className={headerStl.icon} />
+            <Icofont icon="speech-comments" />
           </NavLink>
           <NavLink className={headerStl.hSmallItm}
                    activeClassName={headerStl.active}
                    to="/blog">
-            <FaPencilAlt className={headerStl.icon} />
+            <Icofont icon="newspaper" />
           </NavLink>
           <NavLink className={headerStl.hSmallItm}
                    activeClassName={headerStl.active}
                    to="/music">
-            <FaMusic className={headerStl.icon} />
+            <Icofont icon="sound-wave-alt" />
           </NavLink>
           <NavLink className={headerStl.hSmallItm}
                    activeClassName={headerStl.active}
                    to="/settings">
-            <IoIosSettings className={headerStl.icon} />
+            <Icofont icon="settings-alt" />
           </NavLink>
       </nav>
 

@@ -3,18 +3,22 @@
 }
 
 .dialogsWrap {
-display: flex;
+  display: flex;
   justify-content: space-between;
 }
+
 .dialogsList {
-max-width: 400px;
+  max-width: 400px;
   min-width: 400px;
   width: 400px;
   margin: 0 20px;
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
+  max-height: 100vh;
+  overflow-y: scroll;
 }
+
 .dialogsListHeading {
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -23,6 +27,7 @@ max-width: 400px;
   color: #000;
   position: relative;
 }
+
 .dialogsListHeading:before {
   content: "";
   height: 3px;
@@ -33,6 +38,7 @@ max-width: 400px;
   left: 0;
   bottom: 0;
 }
+
 .dialogsListHeading:after {
   content: "";
   height: 3px;
@@ -43,11 +49,13 @@ max-width: 400px;
   left: 10px;
   bottom: 0;
 }
+
 .dialogsFilter {
-margin-bottom: 20px;
+  margin-bottom: 20px;
   display: flex;
   gap: 5px;
 }
+
 .dialogsFilterBtn {
   font-size: 13px;
   padding: 5px 13px;
@@ -59,12 +67,103 @@ margin-bottom: 20px;
   cursor: pointer;
   transition: all .3s ease 0s;
 }
+
 .dialogsFilterBtn:hover,
 .dialogsFilterBtn.active {
   border-color: #34b7f1;
   background-color: #34b7f1;
   color: #fff;
 }
+
+.membersList {
+  display: flex;
+  flex-direction: column;
+}
+
+.membersListItm {
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 3px;
+  overflow: visible;
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+}
+
+.membersListItm.active {
+  background: rgba(45,91,27,.2);
+}
+
+.memberAvatar {
+  position: relative;
+  margin-right: 25px;
+  margin-left: 20px;
+}
+
+.memberAvatar:after {
+  content: url(chat_round_shape2.png);
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  transform: rotate(30deg);
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+.membersListItm:hover .memberAvatar:after {
+  transform: rotate(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.memberAvatar:before {
+  content: url(chat_round_shape.png);
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  transition: all .3s ease-in-out;
+}
+
+.memberAvatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.memberDesript {
+  display: flex;
+  flex-direction: column;
+}
+
+.descriptHeading {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  position: relative;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.descriptLastVisit {
+  font-size: 14px;
+  color: #9e9faf;
+  line-height: 1.5;
+}
+
+
 .dialogsMsgs {
+  width: 100%;
+  position: relative;
+  border-radius: 8px;
+  background-color: #fff;
+  max-height: 100vh;
+  overflow-y: scroll;
+  padding: 30px;
+}
+.dialogsMsgMy {
+
+}
+.dialogsMsgYrs {
 
 }
