@@ -3,17 +3,18 @@ import sProf from './profile.module.css';
 import avatar from './ava.jpg';
 import Icofont from "react-icofont";
 import React from "react";
+import {Likes} from "../Header/Likes/Likes";
 
 export const Profile = () => {
   return (
     <div className={sProf.main}>
       <div className={globStl.container}>
         <div className={sProf.header}>
-<div className={sProf.img}>
-  <img src={avatar} alt="Avatar"/>
-</div>
+          <div className={sProf.img}>
+            <img src={avatar} alt="Avatar"/>
+          </div>
           <div className={sProf.stat}>
-<h2 className={sProf.name}>Name Surname</h2>
+            <h2 className={sProf.name}>Name Surname</h2>
             <p className={sProf.subtitle}>Lviv, Ukraine</p>
             <div className={sProf.socialMeta}>
 
@@ -35,10 +36,10 @@ export const Profile = () => {
                 </a>
               </div>
               <div className={sProf.meta}>
-<div className={sProf.metaInfo}>
-  Posts
-  <span> 4</span>
-</div>
+                <div className={sProf.metaInfo}>
+                  Posts
+                  <span> 4</span>
+                </div>
                 <div className={sProf.metaInfo}>
                   Comments:
                   <span> 12</span>
@@ -50,8 +51,10 @@ export const Profile = () => {
               </div>
 
             </div>
+
           </div>
         </div>
+        <Likes />
       </div>
     </div>
   )
