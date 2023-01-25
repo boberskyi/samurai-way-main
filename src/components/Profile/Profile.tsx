@@ -37,7 +37,7 @@ export const Profile = () => {
               <div className={sProf.meta}>
 <div className={sProf.metaInfo}>
   Posts
-  <span>4</span>
+  <span> 4</span>
 </div>
                 <div className={sProf.metaInfo}>
                   Comments:
