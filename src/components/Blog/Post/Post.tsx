@@ -8,7 +8,7 @@ type PostPropsType = {
   id: number,
   img: string,
   title: string,
-  dcr: string
+  descript: string
 }
 
 export const Post = (props:PostsPropsType) => {
@@ -20,7 +20,7 @@ export const Post = (props:PostsPropsType) => {
             <img className={"postImg"} src={post.img} alt=""/>
             <h3 className="postTitle">{post.title}</h3>
             <p className="postDescript">
-              {post.dcr}
+              {post.descript}
             </p>
           </div>
           )

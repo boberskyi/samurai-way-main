@@ -64,7 +64,7 @@ const FriendsMessage = (props: FriendsMessagePropsType) => {
 
 export const Dialogs = (props:DialogsDataPropsType) => {
 
-  let dialogsData = [
+  let dialogs = [
     {id: 1, ava: ava1, name: '1Rebeca Powel', online: '3 days ago'},
     {id: 2, ava: ava2, name: 'Andre Dubus', online: '8 days ago'},
     {id: 3, ava: ava3, name: 'John Caius', online: '1 week ago'},
@@ -76,9 +76,12 @@ export const Dialogs = (props:DialogsDataPropsType) => {
 
   let messagesData = [
     {id: 1, message: 'My message 1'},
-    {id: 1, message: 'My message 2'},
-    {id: 1, message: 'My message 3'}
+    {id: 2, message: 'My message 2'},
+    {id: 3, message: 'My message 3'}
   ]
+
+  let dialogsElements = dialogs.map(d => <DialogItm key={d.id} id={d.id} ava={d.ava} name={d.name} online={d.online} />);
+  let messageElements = messagesData.map(m => <MyMessage key={m.id} msg={m.message}/>);
 
   return (
     <div className={dStl.dialogs}>
@@ -94,22 +97,12 @@ export const Dialogs = (props:DialogsDataPropsType) => {
             </div>
 
             <div className={dStl.membersList}>
-              <DialogItm id={dialogsData[0].id} ava={dialogsData[0].ava} name={dialogsData[0].name} online={dialogsData[0].online} />
-              <DialogItm id={dialogsData[1].id} ava={dialogsData[1].ava} name={dialogsData[1].name} online={dialogsData[1].online} />
-              <DialogItm id={dialogsData[2].id} ava={dialogsData[2].ava} name={dialogsData[2].name} online={dialogsData[2].online} />
-              <DialogItm id={dialogsData[3].id} ava={dialogsData[3].ava} name={dialogsData[3].name} online={dialogsData[3].online} />
-              <DialogItm id={dialogsData[4].id} ava={dialogsData[4].ava} name={dialogsData[4].name} online={dialogsData[4].online} />
-              <DialogItm id={dialogsData[5].id} ava={dialogsData[5].ava} name={dialogsData[5].name} online={dialogsData[5].online} />
-              <DialogItm id={dialogsData[6].id} ava={dialogsData[6].ava} name={dialogsData[6].name} online={dialogsData[6].online} />
+              {dialogsElements}
             </div>
           </aside>
 
           <div className={dStl.dialogsMsgs}>
-
-            <MyMessage msg={messagesData[0].message}/>
-            <MyMessage msg={messagesData[1].message}/>
-            <MyMessage msg={messagesData[2].message}/>
-
+            {messageElements}
           </div>
         </div>
       </div>
