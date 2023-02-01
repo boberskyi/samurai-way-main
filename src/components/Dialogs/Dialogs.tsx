@@ -35,7 +35,7 @@ type MyMessagePropType = {
   msg: string
 }
 
-const MyMessage = (props:MyMessagePropType) => {
+const MyMessage = (props: MyMessagePropType) => {
   return (
     <div className={dStl.dialogsMsgMy}>{props.msg}</div>
   )
@@ -45,13 +45,35 @@ type FriendsMessagePropsType = {
   msg: string
 }
 
-const FriendsMessage = (props:FriendsMessagePropsType) => {
+type DialogsDataPropsType = {
+  data: DialogPropsType[]
+}
+
+type DialogPropsType = {
+  id: number,
+  ava: string,
+  name: string,
+  online: string
+}
+
+const FriendsMessage = (props: FriendsMessagePropsType) => {
   return (
     <div className={dStl.dialogsMsgYr}>{props.msg}</div>
   )
 }
 
-export const Dialogs = () => {
+export const Dialogs = (props:DialogsDataPropsType) => {
+
+  let dialogsData = [
+    {id: 1, ava: ava1, name: '1Rebeca Powel', online: '3 days ago'},
+    {id: 2, ava: ava2, name: 'Andre Dubus', online: '8 days ago'},
+    {id: 3, ava: ava3, name: 'John Caius', online: '1 week ago'},
+    {id: 4, ava: ava4, name: 'Wynonna Judd', online: '1 month ago'},
+    {id: 5, ava: ava5, name: 'Keir Dullea', online: '1 month ago'},
+    {id: 6, ava: ava6, name: 'Cecelia Cichan', online: '5 months ago'},
+    {id: 7, ava: ava7, name: 'Ron Faucheux', online: '10 months ago'}
+  ]
+
   return (
     <div className={dStl.dialogs}>
       <div className={globStl.container}>
@@ -66,23 +88,23 @@ export const Dialogs = () => {
             </div>
 
             <div className={dStl.membersList}>
-              <DialogItm id={1} ava={ava1} name="Rebeca Powel" online="3 days ago"/>
-              <DialogItm id={2} ava={ava2} name="Andre Dubus" online="8 days ago"/>
-              <DialogItm id={3} ava={ava3} name="John Caius" online="1 week ago"/>
-              <DialogItm id={4} ava={ava4} name="Wynonna Judd" online="1 month ago"/>
-              <DialogItm id={5} ava={ava5} name="Keir Dullea" online="1 month ago"/>
-              <DialogItm id={6} ava={ava6} name="Cecelia Cichan" online="5 months ago"/>
-              <DialogItm id={7} ava={ava7} name="Ron Faucheux" online="10 months ago"/>
+              <DialogItm id={dialogsData[0].id} ava={dialogsData[0].ava} name={dialogsData[0].name} online={dialogsData[0].online} />
+              <DialogItm id={dialogsData[1].id} ava={dialogsData[1].ava} name={dialogsData[1].name} online={dialogsData[1].online} />
+              <DialogItm id={dialogsData[2].id} ava={dialogsData[2].ava} name={dialogsData[2].name} online={dialogsData[2].online} />
+              <DialogItm id={dialogsData[3].id} ava={dialogsData[3].ava} name={dialogsData[3].name} online={dialogsData[3].online} />
+              <DialogItm id={dialogsData[4].id} ava={dialogsData[4].ava} name={dialogsData[4].name} online={dialogsData[4].online} />
+              <DialogItm id={dialogsData[5].id} ava={dialogsData[5].ava} name={dialogsData[5].name} online={dialogsData[5].online} />
+              <DialogItm id={dialogsData[6].id} ava={dialogsData[6].ava} name={dialogsData[6].name} online={dialogsData[6].online} />
             </div>
           </aside>
 
           <div className={dStl.dialogsMsgs}>
 
-            <MyMessage msg="My message 1" />
-            <FriendsMessage msg="Friends message 1" />
-            <FriendsMessage msg="Friends message 2" />
-            <MyMessage msg="My message 2" />
-            <MyMessage msg="My message 3" />
+            <MyMessage msg="My message 1"/>
+            <FriendsMessage msg="Friends message 1"/>
+            <FriendsMessage msg="Friends message 2"/>
+            <MyMessage msg="My message 2"/>
+            <MyMessage msg="My message 3"/>
 
           </div>
         </div>
