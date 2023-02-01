@@ -74,6 +74,12 @@ export const Dialogs = (props:DialogsDataPropsType) => {
     {id: 7, ava: ava7, name: 'Ron Faucheux', online: '10 months ago'}
   ]
 
+  let messagesData = [
+    {id: 1, message: 'My message 1'},
+    {id: 1, message: 'My message 2'},
+    {id: 1, message: 'My message 3'}
+  ]
+
   return (
     <div className={dStl.dialogs}>
       <div className={globStl.container}>
@@ -100,11 +106,9 @@ export const Dialogs = (props:DialogsDataPropsType) => {
 
           <div className={dStl.dialogsMsgs}>
 
-            <MyMessage msg="My message 1"/>
-            <FriendsMessage msg="Friends message 1"/>
-            <FriendsMessage msg="Friends message 2"/>
-            <MyMessage msg="My message 2"/>
-            <MyMessage msg="My message 3"/>
+            <MyMessage msg={messagesData[0].message}/>
+            <MyMessage msg={messagesData[1].message}/>
+            <MyMessage msg={messagesData[2].message}/>
 
           </div>
         </div>
