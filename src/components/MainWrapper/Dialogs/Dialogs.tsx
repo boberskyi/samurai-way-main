@@ -6,31 +6,16 @@ import ava4 from './ava4.jpg';
 import ava5 from './ava5.jpg';
 import ava6 from './ava6.jpg';
 import ava7 from './ava7.jpg';
-import {NavLink} from "react-router-dom";
+import {DialogItm} from "./DialogItm/DialogItm";
 
-type DialogItmPropsType = {
+export type DialogItmPropsType = {
   id: number,
   ava: string,
   name: string,
   online: string
 }
 
-const DialogItm = (props: DialogItmPropsType) => {
-  let linkTo = `/dialogs/${props.id}`;
-  return (
-    <NavLink to={linkTo} className={dStl.membersListItm}>
-                <span className={dStl.memberAvatar}>
-                  <img src={props.ava} alt={props.name}/>
-                </span>
-      <span className={dStl.memberDesript}>
-                  <span className={dStl.descriptHeading}>{props.name}</span>
-                  <span className={dStl.descriptLastVisit}>{props.online}</span>
-                </span>
-    </NavLink>
-  )
-}
-
-type MyMessagePropType = {
+export type MyMessagePropType = {
   msg: string
 }
 
@@ -40,15 +25,15 @@ const MyMessage = (props: MyMessagePropType) => {
   )
 }
 
-type FriendsMessagePropsType = {
+export type FriendsMessagePropsType = {
   msg: string
 }
 
-type DialogsDataPropsType = {
+export type DialogsDataPropsType = {
   data: DialogPropsType[]
 }
 
-type DialogPropsType = {
+export type DialogPropsType = {
   id: number,
   ava: string,
   name: string,
