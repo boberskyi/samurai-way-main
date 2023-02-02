@@ -1,4 +1,3 @@
-import dStl from './dialogs.module.css';
 import ava1 from './ava1.jpg';
 import ava2 from './ava2.jpg';
 import ava3 from './ava3.jpg';
@@ -8,6 +7,8 @@ import ava6 from './ava6.jpg';
 import ava7 from './ava7.jpg';
 import {DialogItm} from "./DialogItm/DialogItm";
 import {Message} from "./Message/Message";
+import {Container} from "../MainWrapper";
+import styled from "styled-components";
 
 export type DialogItmPropsType = {
   id: number,
@@ -31,7 +32,7 @@ export type DialogPropsType = {
   online: string
 }
 
-export const Dialogs = (props:DialogsDataPropsType) => {
+export const Dialogs = (props: DialogsDataPropsType) => {
 
   let dialogs = [
     {id: 1, ava: ava1, name: 'Rebeca Powel', online: '3 days ago'},
@@ -49,33 +50,108 @@ export const Dialogs = (props:DialogsDataPropsType) => {
     {id: 3, message: 'My message 3'}
   ]
 
-  let dialogsElements = dialogs.map(d => <DialogItm key={d.id} id={d.id} ava={d.ava} name={d.name} online={d.online} />);
+  let dialogsElements = dialogs.map(d => <DialogItm key={d.id} id={d.id} ava={d.ava} name={d.name} online={d.online}/>);
   let messageElements = messages.map(m => <Message key={m.id} msg={m.message}/>);
 
   return (
-    <div className={dStl.dialogs}>
-      <div className={"container"}>
-        <div className={dStl.dialogsWrap}>
-          <aside className={dStl.dialogsList}>
-            <h2 className={dStl.dialogsListHeading}>Messages</h2>
-
-            <div className={dStl.dialogsFilter}>
-              <button className={dStl.dialogsFilterBtn + ' ' + dStl.active}>Active</button>
-              <button className={dStl.dialogsFilterBtn}>Newest</button>
-              <button className={dStl.dialogsFilterBtn}>Popular</button>
-            </div>
-
-            <div className={dStl.membersList}>
-              {dialogsElements}
-            </div>
-          </aside>
-
-          <div className={dStl.dialogsMsgs}>
-            {messageElements}
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <DialogsS>
+      <Container>
+        <DialogsWrapS>
+          <DialogListS>
+            <DialogsListHeadingS></DialogsListHeadingS>
+            <DialogsFilterS>
+              <DialogsFilterBtnS>Active</DialogsFilterBtnS>
+              <DialogsFilterBtnS>Newest</DialogsFilterBtnS>
+              <DialogsFilterBtnS>Popular</DialogsFilterBtnS>
+            </DialogsFilterS>
+            <DialogsMembersListS>{dialogsElements}</DialogsMembersListS>
+          </DialogListS>
+          <DialogsMsgsS>{messageElements}</DialogsMsgsS>
+        </DialogsWrapS>
+      </Container>
+    </DialogsS>
   )
 }
+
+const DialogsS = styled.div`
+  
+`
+const DialogsWrapS = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+`
+const DialogListS = styled.aside`
+  max-width: 400px;
+  min-width: 400px;
+  width: 400px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-height: 100vh;
+  overflow-y: scroll;
+`
+const DialogsListHeadingS = styled.h2`
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  &:before {
+    content: "";
+    height: 3px;
+    width: 8px;
+    background-color: #2d5be3;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  &:after {
+      content: "";
+      height: 3px;
+      width: 18px;
+      background-color: #2d5be3;
+      border-radius: 4px;
+      position: absolute;
+      left: 10px;
+      bottom: 0;
+  }
+`
+const DialogsFilterS = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  gap: 5px;
+`
+const DialogsMembersListS = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const DialogsMsgsS = styled.div`
+  width: 100%;
+  position: relative;
+  border-radius: 8px;
+  background-color: #fff;
+  max-height: 100vh;
+  overflow-y: scroll;
+  padding: 30px;
+`
+const DialogsFilterBtnS = styled.div`
+  font-size: 13px;
+  padding: 5px 13px;
+  font-weight: 500;
+  color: #646464;
+  border-radius: 4px;
+  border: 1px solid #e5e5e5;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all .3s ease 0s;
+
+  &:hover,
+  &.active {
+    border-color: #34b7f1;
+    background-color: #34b7f1;
+    color: #fff;
+  }
+`
