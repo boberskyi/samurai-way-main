@@ -1,7 +1,3 @@
-.dialogs {
-
-}
-
 .dialogsWrap {
   display: flex;
   justify-content: space-between;
@@ -88,10 +84,4 @@
   max-height: 100vh;
   overflow-y: scroll;
   padding: 30px;
-}
-.dialogsMsgMy {
-
-}
-.dialogsMsgYrs {
-
 }

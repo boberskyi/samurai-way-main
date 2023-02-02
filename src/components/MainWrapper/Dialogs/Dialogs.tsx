@@ -7,6 +7,7 @@ import ava5 from './ava5.jpg';
 import ava6 from './ava6.jpg';
 import ava7 from './ava7.jpg';
 import {DialogItm} from "./DialogItm/DialogItm";
+import {Message} from "./Message/Message";
 
 export type DialogItmPropsType = {
   id: number,
@@ -16,16 +17,6 @@ export type DialogItmPropsType = {
 }
 
 export type MyMessagePropType = {
-  msg: string
-}
-
-const MyMessage = (props: MyMessagePropType) => {
-  return (
-    <div className={dStl.dialogsMsgMy}>{props.msg}</div>
-  )
-}
-
-export type FriendsMessagePropsType = {
   msg: string
 }
 
@@ -40,16 +31,10 @@ export type DialogPropsType = {
   online: string
 }
 
-const FriendsMessage = (props: FriendsMessagePropsType) => {
-  return (
-    <div className={dStl.dialogsMsgYr}>{props.msg}</div>
-  )
-}
-
 export const Dialogs = (props:DialogsDataPropsType) => {
 
   let dialogs = [
-    {id: 1, ava: ava1, name: '1Rebeca Powel', online: '3 days ago'},
+    {id: 1, ava: ava1, name: 'Rebeca Powel', online: '3 days ago'},
     {id: 2, ava: ava2, name: 'Andre Dubus', online: '8 days ago'},
     {id: 3, ava: ava3, name: 'John Caius', online: '1 week ago'},
     {id: 4, ava: ava4, name: 'Wynonna Judd', online: '1 month ago'},
@@ -58,14 +43,14 @@ export const Dialogs = (props:DialogsDataPropsType) => {
     {id: 7, ava: ava7, name: 'Ron Faucheux', online: '10 months ago'}
   ]
 
-  let messagesData = [
+  let messages = [
     {id: 1, message: 'My message 1'},
     {id: 2, message: 'My message 2'},
     {id: 3, message: 'My message 3'}
   ]
 
   let dialogsElements = dialogs.map(d => <DialogItm key={d.id} id={d.id} ava={d.ava} name={d.name} online={d.online} />);
-  let messageElements = messagesData.map(m => <MyMessage key={m.id} msg={m.message}/>);
+  let messageElements = messages.map(m => <Message key={m.id} msg={m.message}/>);
 
   return (
     <div className={dStl.dialogs}>
