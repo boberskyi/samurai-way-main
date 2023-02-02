@@ -4,6 +4,8 @@ import styled from "styled-components";
 import {Container} from "../MainWrapper";
 import profileCover from "./profile-cover.jpg";
 import roundShape from "./round_shape1.png";
+import {ProfileMeta} from "./ProfileMeta/ProfileMeta";
+import {ProfileSocial} from "./ProfileSocial/ProfileSocial";
 
 export const Profile = () => {
   return (
@@ -17,7 +19,8 @@ export const Profile = () => {
             <ProfileNameS>Bohdan Boberskyi</ProfileNameS>
             <ProfileSubtitleS>Rzeszów, Poland</ProfileSubtitleS>
             <ProfileSocialMetaS>
-
+              <ProfileSocial></ProfileSocial>
+              <ProfileMeta></ProfileMeta>
             </ProfileSocialMetaS>
           </ProfileStatS>
         </ProfileHeaderS>
