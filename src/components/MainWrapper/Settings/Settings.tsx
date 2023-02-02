@@ -1,10 +1,14 @@
+import {Container} from "../MainWrapper";
+import styled from "styled-components";
 
 export const Settings = () => {
   return (
-    <div className={'settings'}>
-      <div className={"container"}>
-        <h1>Settings</h1>
-      </div>
-    </div>
+    <SettingsS>
+      <Container><h1>Settings</h1></Container>
+    </SettingsS>
   )
 }
+
+const SettingsS = styled.div`
+  
+`
