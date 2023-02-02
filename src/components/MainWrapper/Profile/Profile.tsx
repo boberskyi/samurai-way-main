@@ -1,9 +1,9 @@
-import globStl from './../global.module.css';
+import globStl from '../../global.module.css';
 import sProf from './profile.module.css';
 import avatar from './ava.jpg';
 import Icofont from "react-icofont";
 import React from "react";
-import {Likes} from "../Header/Likes/Likes";
+import {Likes} from "../../Header/Likes/Likes";
 
 export const Profile = () => {
   return (
@@ -19,19 +19,19 @@ export const Profile = () => {
             <div className={sProf.socialMeta}>
 
               <div className={sProf.social}>
-                <a className={sProf.link} href="#" target="_blank" style={{backgroundColor: "#365493"}}>
+                <a className={sProf.link} href="src/components/MainWrapper/Profile/Profile#" target="_blank" style={{backgroundColor: "#365493"}}>
                   <Icofont icon="facebook"/>
                 </a>
-                <a className={sProf.link} href="#" target="_blank" style={{backgroundColor: "#38b8ff"}}>
+                <a className={sProf.link} href="src/components/MainWrapper/Profile/Profile#" target="_blank" style={{backgroundColor: "#38b8ff"}}>
                   <Icofont icon="twitter"/>
                 </a>
-                <a className={sProf.link} href="#" target="_blank" style={{backgroundColor: "#ec407a"}}>
+                <a className={sProf.link} href="src/components/MainWrapper/Profile/Profile#" target="_blank" style={{backgroundColor: "#ec407a"}}>
                   <Icofont icon="dribble"/>
                 </a>
-                <a className={sProf.link} href="#" target="_blank" style={{backgroundColor: "#2962ff"}}>
+                <a className={sProf.link} href="src/components/MainWrapper/Profile/Profile#" target="_blank" style={{backgroundColor: "#2962ff"}}>
                   <Icofont icon="behance"/>
                 </a>
-                <a className={sProf.link} href="#" target="_blank" style={{backgroundColor: "red"}}>
+                <a className={sProf.link} href="src/components/MainWrapper/Profile/Profile#" target="_blank" style={{backgroundColor: "red"}}>
                   <Icofont icon="brand-youtube"/>
                 </a>
               </div>

@@ -1,4 +1,4 @@
-import globStl from './../global.module.css';
+import globStl from '../../global.module.css';
 import dStl from './dialogs.module.css';
 import ava1 from './ava1.jpg';
 import ava2 from './ava2.jpg';

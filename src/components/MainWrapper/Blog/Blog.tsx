@@ -1,5 +1,5 @@
 import blogStl from './blog.module.css';
-import globStl from './../global.module.css';
+import globStl from '../../global.module.css';
 import {Post} from "./Post/Post";
 
 export const Blog = () => {

@@ -1,4 +1,4 @@
-import globStl from './../global.module.css';
+import globStl from '../../global.module.css';
 
 export const Music = () => {
   return (
