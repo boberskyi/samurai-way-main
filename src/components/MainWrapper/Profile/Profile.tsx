@@ -1,4 +1,3 @@
-import globStl from '../../global.module.css';
 import sProf from './profile.module.css';
 import avatar from './ava.jpg';
 import Icofont from "react-icofont";
@@ -8,7 +7,7 @@ import {Likes} from "../../Header/Likes/Likes";
 export const Profile = () => {
   return (
     <div className={sProf.main}>
-      <div className={globStl.container}>
+      <div className={"container"}>
         <div className={sProf.header}>
           <div className={sProf.img}>
             <img src={avatar} alt="Avatar"/>

@@ -1,5 +1,4 @@
 import blogStl from './blog.module.css';
-import globStl from '../../global.module.css';
 import {Post} from "./Post/Post";
 
 export const Blog = () => {
@@ -12,7 +11,7 @@ export const Blog = () => {
 
   return (
     <div className={blogStl.blog}>
-      <div className={globStl.container}>
+      <div className={"container"}>
         <Post dataPosts={dataPosts}/>
       </div>
     </div>
