@@ -1,5 +1,4 @@
 import avatar from './ava.jpg';
-import Icofont from "react-icofont";
 import React from "react";
 import styled from "styled-components";
 import {Container} from "../MainWrapper";
@@ -8,72 +7,22 @@ import roundShape from "./round_shape1.png";
 
 export const Profile = () => {
   return (
-      <ProfileS>
-        <Container>
-          <ProfileHeaderS>
-            <ProfileImgS>
-              <img src={avatar} alt="Avatar"/>
-            </ProfileImgS>
-            <ProfileStatS>
-              <ProfileNameS>Bohdan Boberskyi</ProfileNameS>
-              <ProfileSubtitleS>Rzeszów, Poland</ProfileSubtitleS>
-              <ProfileSocialMetaS>
-                <ProfileSocialS>
-                  <ProfileSocialLinkS
-                    href="#"
-                    target="_blank"
-                    style={{backgroundColor: "#365493"}}
-                  >
-                    <Icofont icon="facebook"/>
-                  </ProfileSocialLinkS>
-                  <ProfileSocialLinkS
-                    href="#"
-                    target="_blank"
-                    style={{backgroundColor: "#38b8ff"}}
-                  >
-                    <Icofont icon="twitter"/>
-                  </ProfileSocialLinkS>
-                  <ProfileSocialLinkS
-                    href="#"
-                    target="_blank"
-                    style={{backgroundColor: "#ec407a"}}
-                  >
-                    <Icofont icon="dribble"/>
-                  </ProfileSocialLinkS>
-                  <ProfileSocialLinkS
-                    href="#"
-                    target="_blank"
-                    style={{backgroundColor: "#2962ff"}}
-                  >
-                    <Icofont icon="behance"/>
-                  </ProfileSocialLinkS>
-                  <ProfileSocialLinkS
-                    href="#"
-                    target="_blank"
-                    style={{backgroundColor: "red"}}
-                  >
-                    <Icofont icon="brand-youtube"/>
-                  </ProfileSocialLinkS>
-                </ProfileSocialS>
-                <ProfileMetaS>
-                  <ProfileMetaInfoS>
-                    Posts
-                    <span> 4</span>
-                  </ProfileMetaInfoS>
-                  <ProfileMetaInfoS>
-                    Comments:
-                    <span> 12</span>
-                  </ProfileMetaInfoS>
-                  <ProfileMetaInfoS>
-                    Views:
-                    <span> 30 129</span>
-                  </ProfileMetaInfoS>
-                </ProfileMetaS>
-              </ProfileSocialMetaS>
-            </ProfileStatS>
-          </ProfileHeaderS>
-        </Container>
-      </ProfileS>
+    <ProfileS>
+      <Container>
+        <ProfileHeaderS>
+          <ProfileImgS>
+            <img src={avatar} alt="Avatar"/>
+          </ProfileImgS>
+          <ProfileStatS>
+            <ProfileNameS>Bohdan Boberskyi</ProfileNameS>
+            <ProfileSubtitleS>Rzeszów, Poland</ProfileSubtitleS>
+            <ProfileSocialMetaS>
+
+            </ProfileSocialMetaS>
+          </ProfileStatS>
+        </ProfileHeaderS>
+      </Container>
+    </ProfileS>
   )
 }
 
@@ -147,40 +96,7 @@ const ProfileSubtitleS = styled.p`
   color: #fff;
   margin-bottom: 10px;
 `
-const ProfileSocialMetaS  = styled.div`
+const ProfileSocialMetaS = styled.div`
   display: flex;
   justify-content: space-between;
 `
-const ProfileSocialS = styled.div`
-  display: flex;
-  gap: 5px;
-`
-const ProfileSocialLinkS = styled.a`
-  text-align: center;
-  font-size: 18px;
-  color: #fff;
-  height: 35px;
-  width: 35px;
-  line-height: 35px;
-  border-radius: 50%;
-  transition: all .3s ease-in-out;
-  &:hover {
-    opacity: .8;
-    transition: all .3s ease-in-out;
-  }
-`
-const ProfileMetaS = styled.div`
-  display: flex;
-  gap: 25px;
-`
-const ProfileMetaInfoS = styled.div`
-  color: #d7d7d7;
-  font-size: 14px;
-  span {
-    font-weight: 500;
-    color: #fff;
-  }
-`
-
-
-
