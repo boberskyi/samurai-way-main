@@ -1,5 +1,6 @@
-import blogStl from './blog.module.css';
 import {Post} from "./Post/Post";
+import {Container} from "../MainWrapper";
+import styled from "styled-components";
 
 export const Blog = () => {
   let dataPosts = [
@@ -10,11 +11,14 @@ export const Blog = () => {
 
 
   return (
-    <div className={blogStl.blog}>
-      <div className={"container"}>
+    <BlogBlock>
+      <Container>
         <Post dataPosts={dataPosts}/>
-      </div>
-    </div>
-
+      </Container>
+    </BlogBlock>
   )
 }
+
+const BlogBlock = styled.div`
+  
+`

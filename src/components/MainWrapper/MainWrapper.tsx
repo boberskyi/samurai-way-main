@@ -25,3 +25,10 @@ const AppWrapperMain = styled.div`
   background: #eff4fb;
   min-height: 100vh;
 `
+
+export const Container = styled.div`
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+`

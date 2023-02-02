@@ -1,5 +1,3 @@
-import blogStl from "../blog.module.css";
-
 export type PostsPropsType = {
   dataPosts: PostPropsType[]
 }
@@ -16,7 +14,7 @@ export const Post = (props:PostsPropsType) => {
     <>
       {props.dataPosts.map(post => {
         return (
-          <div className={blogStl.post} key={post.id}>
+          <div className={"post"} key={post.id}>
             <img className={"postImg"} src={post.img} alt=""/>
             <h3 className="postTitle">{post.title}</h3>
             <p className="postDescript">
