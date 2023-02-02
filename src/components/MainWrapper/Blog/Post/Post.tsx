@@ -1,18 +1,8 @@
 import styled from "styled-components";
+import {BlogPropsType} from "../../../../types";
 
-export type PostsPropsType = {
-  dataPosts: PostPropsType[]
-}
-
-type PostPropsType = {
-  id: number,
-  img: string,
-  title: string,
-  descript: string
-}
-
-export const Post = (props: PostsPropsType) => {
-  let posts = props.dataPosts.map(post => {
+export const Post = (props: BlogPropsType) => {
+  let posts = props.posts.map(post => {
     return (
       <PostBlock key={post.id}>
         <img src={post.img} alt="Blog image"/>
