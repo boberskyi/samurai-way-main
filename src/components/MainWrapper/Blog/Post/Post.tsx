@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export type PostsPropsType = {
   dataPosts: PostPropsType[]
 }
@@ -9,21 +11,26 @@ type PostPropsType = {
   descript: string
 }
 
-export const Post = (props:PostsPropsType) => {
-  return (
-    <>
-      {props.dataPosts.map(post => {
-        return (
-          <div className={"post"} key={post.id}>
-            <img className={"postImg"} src={post.img} alt=""/>
-            <h3 className="postTitle">{post.title}</h3>
-            <p className="postDescript">
-              {post.descript}
-            </p>
-          </div>
-          )
-      })}
+export const Post = (props: PostsPropsType) => {
+  let posts = props.dataPosts.map(post => {
+    return (
+      <PostBlock key={post.id}>
+        <img src={post.img} alt="Blog image"/>
+        <PostTitle>{post.title}</PostTitle>
+        <PostDescript>{post.descript}</PostDescript>
+      </PostBlock>
+    )
+  })
 
-  </>
-  )
+  return <>{posts}</>
 }
+
+const PostBlock = styled.div`
+  
+`
+const PostTitle = styled.h3`
+  
+`
+const PostDescript = styled.p`
+  
+`
