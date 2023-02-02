@@ -11,7 +11,6 @@ export const Header = () => {
           <BurgerBtn />
           <SidebarMenu />
         </HeaderSmall>
-
         <HeaderBig></HeaderBig>
       </HeaderB>
   )
