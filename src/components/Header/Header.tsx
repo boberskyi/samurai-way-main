@@ -6,25 +6,25 @@ import {SidebarMenu} from "./SidebarMenu/SidebarMenu";
 export const Header = () => {
   return (
 
-      <HeaderB>
-        <HeaderSmall>
+      <StyledHeader>
+        <StyledHeaderSmall>
           <BurgerBtn />
           <SidebarMenu />
-        </HeaderSmall>
-        <HeaderBig></HeaderBig>
-      </HeaderB>
+        </StyledHeaderSmall>
+        <StyledHeaderBig></StyledHeaderBig>
+      </StyledHeader>
   )
 }
 
 
-const HeaderB = styled.header`
+const StyledHeader = styled.header`
   z-index: 10;
   position: fixed;
   left: 0;
   top: 0;
 `
 
-const HeaderSmall = styled.div`
+const StyledHeaderSmall = styled.div`
   width: 90px;
   transition-delay: .3s;
   position: absolute;
@@ -32,6 +32,6 @@ const HeaderSmall = styled.div`
   transition: transform .5s cubic-bezier(.55, 0, .1, 1);
 `
 
-const HeaderBig = styled.div`
+const StyledHeaderBig = styled.div`
   display: flex;
 `
