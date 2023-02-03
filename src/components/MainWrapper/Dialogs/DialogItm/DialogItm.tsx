@@ -1,26 +1,26 @@
 import {NavLink} from "react-router-dom";
-import {DialogItmPropsType} from "../Dialogs";
 import styled from "styled-components";
 import roundShape1 from "./chat_round_shape.png"
 import roundShape2 from "./chat_round_shape2.png"
+import {DialogsPropsType} from "../../../../types";
 
-export const DialogItm = (props: DialogItmPropsType) => {
+export const DialogItm = (props: DialogsPropsType) => {
   let linkTo = `/dialogs/${props.id}`;
 
   return (
-    <DialogLink to={linkTo}>
-      <MemberAvatar>
+    <StyledDialogLink to={linkTo}>
+      <StyledMemberAvatar>
         <img src={props.ava} alt={props.name}/>
-      </MemberAvatar>
-      <MemberDescript>
-        <DescriptName>{props.name}</DescriptName>
-        <DescriptLastVisit>{props.online}</DescriptLastVisit>
-      </MemberDescript>
-    </DialogLink>
+      </StyledMemberAvatar>
+      <StyledMemberDescript>
+        <StyledDescriptName>{props.name}</StyledDescriptName>
+        <StyledDescriptLastVisit>{props.online}</StyledDescriptLastVisit>
+      </StyledMemberDescript>
+    </StyledDialogLink>
   )
 }
 
-const MemberAvatar = styled.span`
+const StyledMemberAvatar = styled.span`
   position: relative;
   margin-right: 25px;
   margin-left: 20px;
@@ -51,7 +51,7 @@ const MemberAvatar = styled.span`
   }
 `
 
-const DialogLink = styled(NavLink)`
+const StyledDialogLink = styled(NavLink)`
   width: 100%;
   padding: 15px 0;
   margin-top: 3px;
@@ -60,7 +60,7 @@ const DialogLink = styled(NavLink)`
   border-bottom: 1px solid #e5e5e5;
   display: flex;
 
-  &:hover ${MemberAvatar}:after {
+  &:hover ${StyledMemberAvatar}:after {
     transform: rotate(0);
     visibility: visible;
     opacity: 1;
@@ -71,11 +71,11 @@ const DialogLink = styled(NavLink)`
   }
 `
 
-const MemberDescript = styled.span`
+const StyledMemberDescript = styled.span`
   display: flex;
   flex-direction: column;
 `
-const DescriptName = styled.span`
+const StyledDescriptName = styled.span`
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -83,7 +83,7 @@ const DescriptName = styled.span`
   color: #000;
   text-transform: capitalize;
 `
-const DescriptLastVisit = styled.span`
+const StyledDescriptLastVisit = styled.span`
   font-size: 14px;
   color: #9e9faf;
   line-height: 1.5;
