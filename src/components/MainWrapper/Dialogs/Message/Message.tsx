@@ -1,12 +1,12 @@
-import {MyMessagePropType} from "../Dialogs";
 import styled from "styled-components";
+import {MessagesPropsType} from "../../../../types";
 
-export const Message = (props: MyMessagePropType) => {
+export const Message = (props: MessagesPropsType) => {
   return (
-    <MessageBlock>{props.msg}</MessageBlock>
+    <StyledMessageBlock>{props.message}</StyledMessageBlock>
   )
 }
 
-const MessageBlock = styled.div`
+const StyledMessageBlock = styled.div`
   
 `
