@@ -37,6 +37,7 @@ export const MainWrapper = (props:MainWrapperType) => {
 const StyledAppWrapperMain = styled.div`
   padding-left: 90px;
   padding-top: 30px;
+  padding-bottom: 30px;
   background: #eff4fb;
   min-height: 100vh;
 `
