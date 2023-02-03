@@ -7,7 +7,7 @@ import {DialogsDataPropsType} from "../../../types";
 export const Dialogs = (props: DialogsDataPropsType) => {
 
   let dialogsElements = props.dialogs.map(d => <DialogItm key={d.id} id={d.id} ava={d.ava} name={d.name} online={d.online}/>);
-  let messageElements = props.messages.map(m => <Message key={m.id} msg={m.message}/>);
+  let messageElements = props.messages.map(m => <Message key={m.id} id={m.id} message={m.message}/>);
 
   return (
     <DialogsS>
