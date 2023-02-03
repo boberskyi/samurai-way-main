@@ -4,23 +4,23 @@ import {BlogPropsType} from "../../../../types";
 export const Post = (props: BlogPropsType) => {
   let posts = props.posts.map(post => {
     return (
-      <PostBlock key={post.id}>
+      <StyledPost key={post.id}>
         <img src={post.img} alt="Blog image"/>
-        <PostTitle>{post.title}</PostTitle>
-        <PostDescript>{post.descript}</PostDescript>
-      </PostBlock>
+        <StyledPostTitle>{post.title}</StyledPostTitle>
+        <StyledPostDescript>{post.descript}</StyledPostDescript>
+      </StyledPost>
     )
   })
 
   return <>{posts}</>
 }
 
-const PostBlock = styled.div`
+const StyledPost = styled.div`
   
 `
-const PostTitle = styled.h3`
+const StyledPostTitle = styled.h3`
   
 `
-const PostDescript = styled.p`
+const StyledPostDescript = styled.p`
   
 `
