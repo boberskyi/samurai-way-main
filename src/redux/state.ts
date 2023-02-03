@@ -17,9 +17,9 @@ export let state = {
       {id: 7, ava: 'https://cdn1.iconfinder.com/data/icons/website-internet/48/website_-_male_user-512.png', name: 'Ron Faucheux', online: '10 months ago'}
     ],
     messages: [
-      {id: 1, message: 'My message 1'},
-      {id: 2, message: 'My message 2'},
-      {id: 3, message: 'My message 3'}
+      {id: 1, message: 'Hi Bohdan, how are you?'},
+      {id: 2, message: 'Your new project is amazing!'},
+      {id: 3, message: 'Please call me today 🤪'}
     ]
   }
 }
