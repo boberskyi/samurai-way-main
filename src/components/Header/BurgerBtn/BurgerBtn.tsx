@@ -3,17 +3,17 @@ import styled from "styled-components";
 
 export const BurgerBtn = () => {
   return (
-    <SidebarToggle>
-      <ToggleBtn>
+    <StyledSidebarToggle>
+      <StyledToggleBtn>
         <span></span>
         <span></span>
         <span></span>
-      </ToggleBtn>
-    </SidebarToggle>
+      </StyledToggleBtn>
+    </StyledSidebarToggle>
   )
 }
 
-const SidebarToggle = styled.div`
+const StyledSidebarToggle = styled.div`
   background-color: #224ed3;
   text-align: center;
   height: 88px;
@@ -22,7 +22,7 @@ const SidebarToggle = styled.div`
   justify-content: center;
   transition: all .3s ease-in-out;
 `
-const ToggleBtn = styled.div`
+const StyledToggleBtn = styled.div`
   width: 33px;
   border: none;
   background-color: transparent;
