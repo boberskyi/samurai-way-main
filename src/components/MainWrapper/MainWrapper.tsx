@@ -12,24 +12,24 @@ import {AppPropsType} from "../../types";
 
 export const MainWrapper = (props:AppPropsType) => {
   return (
-    <AppWrapperMain>
+    <StyledAppWrapperMain>
       <Route path='/profile' render={() => <Profile />}/>
       <Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
       <Route path='/blog' render={() => <Blog posts={props.posts} />}/>
       <Route path='/music' render={() => <Music />}/>
       <Route path='/settings' render={() => <Settings />}/>
-    </AppWrapperMain>
+    </StyledAppWrapperMain>
   )
 }
 
-const AppWrapperMain = styled.div`
+const StyledAppWrapperMain = styled.div`
   padding-left: 90px;
   padding-top: 30px;
   background: #eff4fb;
   min-height: 100vh;
 `
 
-export const Container = styled.div`
+export const StyledContainer = styled.div`
   max-width: 1200px;
   padding: 0 20px;
   box-sizing: border-box;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import {Container} from "../MainWrapper";
+import {StyledContainer} from "../MainWrapper";
 
 export const Music = () => {
   return (
     <MusicS>
-      <Container><h1>Music</h1></Container>
+      <StyledContainer><h1>Music</h1></StyledContainer>
     </MusicS>
   )
 }

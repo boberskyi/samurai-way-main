@@ -1,5 +1,5 @@
 import {Post} from "./Post/Post";
-import {Container} from "../MainWrapper";
+import {StyledContainer} from "../MainWrapper";
 import styled from "styled-components";
 import {BlogPropsType} from "../../../types";
 
@@ -8,9 +8,9 @@ import {BlogPropsType} from "../../../types";
 export const Blog = (props:BlogPropsType) => {
   return (
     <BlogBlock>
-      <Container>
+      <StyledContainer>
         <Post posts={props.posts}/>
-      </Container>
+      </StyledContainer>
     </BlogBlock>
   )
 }

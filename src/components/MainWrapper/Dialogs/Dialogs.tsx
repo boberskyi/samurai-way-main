@@ -1,6 +1,6 @@
 import {DialogItm} from "./DialogItm/DialogItm";
 import {Message} from "./Message/Message";
-import {Container} from "../MainWrapper";
+import {StyledContainer} from "../MainWrapper";
 import styled from "styled-components";
 import {DialogsDataPropsType} from "../../../types";
 
@@ -11,7 +11,7 @@ export const Dialogs = (props: DialogsDataPropsType) => {
 
   return (
     <DialogsS>
-      <Container>
+      <StyledContainer>
         <DialogsWrapS>
           <DialogListS>
             <DialogsListHeadingS>Messages</DialogsListHeadingS>
@@ -24,7 +24,7 @@ export const Dialogs = (props: DialogsDataPropsType) => {
           </DialogListS>
           <DialogsMsgsS>{messageElements}</DialogsMsgsS>
         </DialogsWrapS>
-      </Container>
+      </StyledContainer>
     </DialogsS>
   )
 }

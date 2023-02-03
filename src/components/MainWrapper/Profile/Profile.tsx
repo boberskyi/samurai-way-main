@@ -1,7 +1,7 @@
 import avatar from './ava.jpg';
 import React from "react";
 import styled from "styled-components";
-import {Container} from "../MainWrapper";
+import {StyledContainer} from "../MainWrapper";
 import profileCover from "./profile-cover.jpg";
 import roundShape from "./round_shape1.png";
 import {ProfileMeta} from "./ProfileMeta/ProfileMeta";
@@ -10,7 +10,7 @@ import {ProfileSocial} from "./ProfileSocial/ProfileSocial";
 export const Profile = () => {
   return (
     <ProfileS>
-      <Container>
+      <StyledContainer>
         <ProfileHeaderS>
           <ProfileImgS>
             <img src={avatar} alt="Avatar"/>
@@ -24,7 +24,7 @@ export const Profile = () => {
             </ProfileSocialMetaS>
           </ProfileStatS>
         </ProfileHeaderS>
-      </Container>
+      </StyledContainer>
     </ProfileS>
   )
 }
