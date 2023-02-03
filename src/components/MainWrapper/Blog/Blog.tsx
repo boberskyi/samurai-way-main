@@ -7,14 +7,14 @@ import {BlogPropsType} from "../../../types";
 
 export const Blog = (props:BlogPropsType) => {
   return (
-    <BlogBlock>
+    <StyledBlog>
       <StyledContainer>
         <Post posts={props.posts}/>
       </StyledContainer>
-    </BlogBlock>
+    </StyledBlog>
   )
 }
 
-const BlogBlock = styled.div`
+const StyledBlog = styled.div`
   
 `
