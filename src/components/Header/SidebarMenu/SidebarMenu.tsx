@@ -5,34 +5,34 @@ import {NavLink} from "react-router-dom";
 
 export const SidebarMenu = () => {
   return (
-    <SidebarMenuToggle>
-      <NavEl to="/profile" activeClassName="active">
+    <StyledSidebarMenuToggle>
+      <StyledNavEl to="/profile" activeClassName="active">
         <Icofont icon="users-alt-4"/>
-      </NavEl>
-      <NavEl to="/dialogs" activeClassName="active">
+      </StyledNavEl>
+      <StyledNavEl to="/dialogs" activeClassName="active">
         <Icofont icon="speech-comments"/>
-      </NavEl>
-      <NavEl to="/blog" activeClassName="active">
+      </StyledNavEl>
+      <StyledNavEl to="/blog" activeClassName="active">
         <Icofont icon="newspaper"/>
-      </NavEl>
-      <NavEl to="/music" activeClassName="active">
+      </StyledNavEl>
+      <StyledNavEl to="/music" activeClassName="active">
         <Icofont icon="sound-wave-alt"/>
-      </NavEl>
-      <NavEl to="/settings" activeClassName="active">
+      </StyledNavEl>
+      <StyledNavEl to="/settings" activeClassName="active">
         <Icofont icon="settings-alt"/>
-      </NavEl>
-    </SidebarMenuToggle>
+      </StyledNavEl>
+    </StyledSidebarMenuToggle>
   )
 }
 
-const SidebarMenuToggle = styled.nav`
+const StyledSidebarMenuToggle = styled.nav`
   height: 100%;
   background-color: #fff;
   padding: 30px 0;
   display: flex;
   flex-direction: column;
 `
-const NavEl = styled(NavLink)`
+const StyledNavEl = styled(NavLink)`
   margin-bottom: 18px;
   font-size: 24px;
   color: #8793a3;
