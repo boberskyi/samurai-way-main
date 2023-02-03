@@ -2,12 +2,12 @@ import {DialogItm} from "./DialogItm/DialogItm";
 import {Message} from "./Message/Message";
 import {StyledContainer} from "../MainWrapper";
 import styled from "styled-components";
-import {DialogsDataPropsType} from "../../../types";
+import {DialogsStateType} from "../../../types";
 
-export const Dialogs = (props: DialogsDataPropsType) => {
+export const Dialogs = (props: DialogsStateType) => {
 
-  let dialogsElements = props.dialogs.map(d => <DialogItm key={d.id} id={d.id} ava={d.ava} name={d.name} online={d.online}/>);
-  let messageElements = props.messages.map(m => <Message key={m.id} id={m.id} message={m.message}/>);
+  let dialogsElements = props.state.dialogs.map(d => <DialogItm key={d.id} id={d.id} ava={d.ava} name={d.name} online={d.online}/>);
+  let messageElements = props.state.messages.map(m => <Message key={m.id} id={m.id} message={m.message}/>);
 
   return (
     <DialogsS>

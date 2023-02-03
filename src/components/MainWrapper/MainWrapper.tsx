@@ -6,18 +6,30 @@ import {Music} from "./Music/Music";
 import {Settings} from "./Settings/Settings";
 import React from "react";
 import styled from "styled-components";
-import {AppPropsType} from "../../types";
+import {MainWrapperType} from "../../types";
 
 
 
-export const MainWrapper = (props:AppPropsType) => {
+export const MainWrapper = (props:MainWrapperType) => {
   return (
     <StyledAppWrapperMain>
-      <Route path='/profile' render={() => <Profile />}/>
-      <Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
-      <Route path='/blog' render={() => <Blog posts={props.posts} />}/>
-      <Route path='/music' render={() => <Music />}/>
-      <Route path='/settings' render={() => <Settings />}/>
+      <Route path='/profile'
+             render={() => <Profile />}
+      />
+      <Route path='/dialogs'
+             render={() => <Dialogs state={props.state.dialogsPage}
+             />}
+      />
+      <Route path='/blog'
+             render={() => <Blog
+               posts={props.state.blogPage.posts} />}
+      />
+      <Route path='/music'
+             render={() => <Music />}
+      />
+      <Route path='/settings'
+             render={() => <Settings />}
+      />
     </StyledAppWrapperMain>
   )
 }

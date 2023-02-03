@@ -2,9 +2,9 @@ import {NavLink} from "react-router-dom";
 import styled from "styled-components";
 import roundShape1 from "./chat_round_shape.png"
 import roundShape2 from "./chat_round_shape2.png"
-import {DialogsPropsType} from "../../../../types";
+import {DialogsItmPropsType} from "../../../../types";
 
-export const DialogItm = (props: DialogsPropsType) => {
+export const DialogItm = (props: DialogsItmPropsType) => {
   let linkTo = `/dialogs/${props.id}`;
 
   return (

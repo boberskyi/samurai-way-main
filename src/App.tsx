@@ -3,16 +3,16 @@ import './App.css';
 import {Header} from "./components/Header/Header";
 import {BrowserRouter} from "react-router-dom";
 import {MainWrapper} from "./components/MainWrapper/MainWrapper";
-import {AppPropsType} from "./types";
+import {AppStateType} from "./types";
 
 
 
-const App = (props:AppPropsType) => {
+const App = (props:AppStateType) => {
   return (
     <BrowserRouter>
       <main>
         <Header/>
-        <MainWrapper posts={props.posts} dialogs={props.dialogs} messages={props.messages}/>
+        <MainWrapper state={props.state}/>
       </main>
     </BrowserRouter>
   );
