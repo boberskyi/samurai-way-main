@@ -12,7 +12,8 @@ export const Dialogs = (props: DialogsStateType) => {
   let [msgText, setMsgText] = useState('');
 
   let onChangeMsg = (e:ChangeEvent<HTMLTextAreaElement>) => {
-    console.log(e.currentTarget.value);
+    setMsgText(e.currentTarget.value);
+    console.log(msgText);
   }
   return (
     <StyledDialogs>
@@ -30,7 +31,7 @@ export const Dialogs = (props: DialogsStateType) => {
           <StyledDialogsRightWrap>
             <StyledDialogsMsgs>{messageElements}</StyledDialogsMsgs>
             <StyledDialogsSendControls>
-              <StyledMsgSend onChange={onChangeMsg}></StyledMsgSend>
+              <StyledMsgSend onChange={onChangeMsg} value={msgText}></StyledMsgSend>
               <StyledDialogsBtn>Send</StyledDialogsBtn>
             </StyledDialogsSendControls>
           </StyledDialogsRightWrap>
