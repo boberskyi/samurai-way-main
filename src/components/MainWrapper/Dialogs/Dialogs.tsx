@@ -3,41 +3,52 @@ import {Message} from "./Message/Message";
 import {StyledContainer} from "../MainWrapper";
 import styled from "styled-components";
 import {DialogsStateType} from "../../../types";
+import {ChangeEvent, useState} from "react";
 
 export const Dialogs = (props: DialogsStateType) => {
 
   let dialogsElements = props.state.dialogs.map(d => <DialogItm key={d.id} id={d.id} ava={d.ava} name={d.name} online={d.online}/>);
   let messageElements = props.state.messages.map(m => <Message key={m.id} id={m.id} message={m.message}/>);
+  let [msgText, setMsgText] = useState('');
 
+  let onChangeMsg = (e:ChangeEvent<HTMLTextAreaElement>) => {
+    console.log(e.currentTarget.value);
+  }
   return (
-    <DialogsS>
+    <StyledDialogs>
       <StyledContainer>
-        <DialogsWrapS>
-          <DialogListS>
-            <DialogsListHeadingS>Messages</DialogsListHeadingS>
-            <DialogsFilterS>
-              <DialogsFilterBtnS>Active</DialogsFilterBtnS>
-              <DialogsFilterBtnS>Newest</DialogsFilterBtnS>
-              <DialogsFilterBtnS>Popular</DialogsFilterBtnS>
-            </DialogsFilterS>
-            <DialogsMembersListS>{dialogsElements}</DialogsMembersListS>
-          </DialogListS>
-          <DialogsMsgsS>{messageElements}</DialogsMsgsS>
-        </DialogsWrapS>
+        <StyledDialogsWrap>
+          <StyledDialogList>
+            <StyledDialogsListHeading>Messages</StyledDialogsListHeading>
+            <StyledDialogsFilter>
+              <StyledDialogsFilterBtn>Active</StyledDialogsFilterBtn>
+              <StyledDialogsFilterBtn>Newest</StyledDialogsFilterBtn>
+              <StyledDialogsFilterBtn>Popular</StyledDialogsFilterBtn>
+            </StyledDialogsFilter>
+            <StyledDialogsMembersList>{dialogsElements}</StyledDialogsMembersList>
+          </StyledDialogList>
+          <StyledDialogsRightWrap>
+            <StyledDialogsMsgs>{messageElements}</StyledDialogsMsgs>
+            <StyledDialogsSendControls>
+              <StyledMsgSend onChange={onChangeMsg}></StyledMsgSend>
+              <StyledDialogsBtn>Send</StyledDialogsBtn>
+            </StyledDialogsSendControls>
+          </StyledDialogsRightWrap>
+        </StyledDialogsWrap>
       </StyledContainer>
-    </DialogsS>
+    </StyledDialogs>
   )
 }
 
-const DialogsS = styled.div`
-  
+const StyledDialogs = styled.div`
+
 `
-const DialogsWrapS = styled.div`
+const StyledDialogsWrap = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 20px;
 `
-const DialogListS = styled.aside`
+const StyledDialogList = styled.aside`
   max-width: 400px;
   min-width: 400px;
   width: 400px;
@@ -47,13 +58,14 @@ const DialogListS = styled.aside`
   max-height: 100vh;
   overflow-y: scroll;
 `
-const DialogsListHeadingS = styled.h2`
+const StyledDialogsListHeading = styled.h2`
   margin-bottom: 20px;
   padding-bottom: 10px;
   font-size: 18px;
   font-weight: 700;
   color: #000;
   position: relative;
+
   &:before {
     content: "";
     height: 3px;
@@ -64,36 +76,31 @@ const DialogsListHeadingS = styled.h2`
     left: 0;
     bottom: 0;
   }
+
   &:after {
-      content: "";
-      height: 3px;
-      width: 18px;
-      background-color: #2d5be3;
-      border-radius: 4px;
-      position: absolute;
-      left: 10px;
-      bottom: 0;
+    content: "";
+    height: 3px;
+    width: 18px;
+    background-color: #2d5be3;
+    border-radius: 4px;
+    position: absolute;
+    left: 10px;
+    bottom: 0;
   }
 `
-const DialogsFilterS = styled.div`
+const StyledDialogsFilter = styled.div`
   margin-bottom: 20px;
   display: flex;
   gap: 5px;
 `
-const DialogsMembersListS = styled.div`
+const StyledDialogsMembersList = styled.div`
   display: flex;
   flex-direction: column;
 `
-const DialogsMsgsS = styled.div`
+const StyledDialogsMsgs = styled.div`
   width: 100%;
-  position: relative;
-  border-radius: 8px;
-  background-color: #fff;
-  max-height: 100vh;
-  overflow-y: scroll;
-  padding: 30px;
 `
-const DialogsFilterBtnS = styled.div`
+const StyledDialogsFilterBtn = styled.div`
   font-size: 13px;
   padding: 5px 13px;
   font-weight: 500;
@@ -110,4 +117,41 @@ const DialogsFilterBtnS = styled.div`
     background-color: #34b7f1;
     color: #fff;
   }
+`
+const StyledMsgSend = styled.textarea`
+  width: 100%;
+  resize: none;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 7px;
+  min-height: 35px;
+  height: 35px;
+`
+const StyledDialogsRightWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 8px;
+  background-color: #fff;
+  max-height: 100vh;
+  overflow-y: scroll;
+  padding: 30px;
+  justify-content: space-between;
+`
+const StyledDialogsSendControls = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`
+const StyledDialogsBtn = styled.button`
+  height: 50px;
+  width: 70px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 7px;
 `
