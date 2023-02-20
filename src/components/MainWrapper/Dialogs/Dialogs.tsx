@@ -9,11 +9,17 @@ export const Dialogs = (props: DialogsStateType) => {
 
   let dialogsElements = props.state.dialogs.map(d => <DialogItm key={d.id} id={d.id} ava={d.ava} name={d.name} online={d.online}/>);
   let messageElements = props.state.messages.map(m => <Message key={m.id} id={m.id} message={m.message}/>);
+
   let [msgText, setMsgText] = useState('');
 
   let onChangeMsg = (e:ChangeEvent<HTMLTextAreaElement>) => {
     setMsgText(e.currentTarget.value);
     console.log(msgText);
+  }
+
+  let onClickSend = () => {
+    () =>
+    console.log('Message sent');
   }
   return (
     <StyledDialogs>
@@ -32,7 +38,7 @@ export const Dialogs = (props: DialogsStateType) => {
             <StyledDialogsMsgs>{messageElements}</StyledDialogsMsgs>
             <StyledDialogsSendControls>
               <StyledMsgSend onChange={onChangeMsg} value={msgText}></StyledMsgSend>
-              <StyledDialogsBtn>Send</StyledDialogsBtn>
+              <StyledDialogsBtn onClick={onClickSend}>Send</StyledDialogsBtn>
             </StyledDialogsSendControls>
           </StyledDialogsRightWrap>
         </StyledDialogsWrap>

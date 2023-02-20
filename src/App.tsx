@@ -7,12 +7,12 @@ import {AppStateType} from "./types";
 
 
 
-const App = (props:AppStateType) => {
+const App:React.FC<AppStateType> = ({state}) => {
   return (
     <BrowserRouter>
       <main>
         <Header/>
-        <MainWrapper state={props.state}/>
+        <MainWrapper state={state}/>
       </main>
     </BrowserRouter>
   );
