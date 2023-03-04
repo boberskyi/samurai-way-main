@@ -17,10 +17,7 @@ export const Dialogs = (props: DialogsStateType) => {
     console.log(msgText);
   }
 
-  let onClickSend = () => {
-    () =>
-    console.log('Message sent');
-  }
+  let onClickSend = () => alert(msgText);
   return (
     <StyledDialogs>
       <StyledContainer>

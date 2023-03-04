@@ -5,19 +5,24 @@ import {BlogPropsType} from "../../../types";
 import React from "react";
 
 
-const postTitle = React.createRef<HTMLInputElement>();
+
 
 export const Blog = (props:BlogPropsType) => {
 
   const addPosts = () => {
-  const text = postTitle.current?.value;
-    alert(text);
+    props.addNewPost(props.messageForNewPost);
   }
+
+  const onChangeHandler = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
+  props.changeText(e.currentTarget.value);
+  }
+
+
   return (
     <StyledBlog>
       <StyledContainer>
         <button onClick={addPosts}>Add post</button>
-        <input type="text" placeholder={"Title"} ref={postTitle}/>
+        <textarea onChange={onChangeHandler} value={props.messageForNewPost}> </textarea>
 
         <Post posts={props.posts}/>
       </StyledContainer>

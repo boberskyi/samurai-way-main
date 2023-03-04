@@ -10,7 +10,7 @@ import {MainWrapperType} from "../../types";
 
 
 
-export const MainWrapper = (props:MainWrapperType) => {
+export const MainWrapper:React.FC<MainWrapperType> = (props) => {
   return (
     <StyledAppWrapperMain>
       <Route path='/profile'
@@ -22,7 +22,11 @@ export const MainWrapper = (props:MainWrapperType) => {
       />
       <Route path='/blog'
              render={() => <Blog
-               posts={props.state.blogPage.posts} />}
+               posts={props.state.blogPage.posts}
+                addNewPost={props.addNewPost}
+                messageForNewPost={props.messageForNewPost}
+               changeText={props.changeText}
+             />}
       />
       <Route path='/music'
              render={() => <Music />}

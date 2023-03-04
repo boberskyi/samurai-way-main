@@ -1,5 +1,24 @@
-export let state = {
+import {DialogsItmPropsType, MessagesPropsType, PostsPropsType} from "../types";
+import {renderTree} from "../render";
+
+export type RootStateType = {
+  blogPage: BlogPagePropsType,
+  dialogsPage: DialogsPagePropsType
+}
+
+type BlogPagePropsType = {
+  messageForNewPost: string,
+  posts: PostsPropsType[]
+}
+
+type DialogsPagePropsType = {
+  dialogs: DialogsItmPropsType[],
+  messages: MessagesPropsType[]
+}
+
+export let state:RootStateType = {
   blogPage: {
+    messageForNewPost: 'test',
     posts: [
       {id: 1, img: 'https://via.placeholder.com/350x150', title: 'Post 1', descript: '1 Lorem ipsum lalala'},
       {id: 2, img: 'https://via.placeholder.com/350x150', title: 'Post 2', descript: '2 Lorem ipsum lalala'},
@@ -22,4 +41,21 @@ export let state = {
       {id: 3, message: 'Please call me today 🤪'}
     ]
   }
+}
+
+export const addNewPost = (postMessage: string) => {
+  const newPost: PostsPropsType = {
+    id: 5,
+    img: 'https://via.placeholder.com/350x150',
+    title: 'Post 5',
+    descript: postMessage
+  }
+  state.blogPage.posts.push(newPost);
+
+  renderTree(state);
+}
+
+export const changeText = (newText: string) => {
+  state.blogPage.messageForNewPost = newText;
+  renderTree(state);
 }

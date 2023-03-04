@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {BlogPropsType} from "../../../../types";
+import {PostPropsType} from "../../../../types";
 
-export const Post = (props: BlogPropsType) => {
+export const Post = (props: PostPropsType) => {
   let posts = props.posts.map(post => {
     return (
       <StyledPost key={post.id}>
