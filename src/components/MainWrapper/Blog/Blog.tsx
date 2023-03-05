@@ -11,10 +11,11 @@ export const Blog = (props:BlogPropsType) => {
 
   const addPosts = () => {
     props.addNewPost(props.messageForNewPost);
+    props.changeText('');
   }
 
   const onChangeHandler = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
-  props.changeText(e.currentTarget.value);
+    props.changeText(e.currentTarget.value);
   }
 
 
@@ -22,7 +23,7 @@ export const Blog = (props:BlogPropsType) => {
     <StyledBlog>
       <StyledContainer>
         <button onClick={addPosts}>Add post</button>
-        <textarea onChange={onChangeHandler} value={props.messageForNewPost}> </textarea>
+        <textarea onChange={onChangeHandler} value={props.messageForNewPost} />
 
         <Post posts={props.posts}/>
       </StyledContainer>
