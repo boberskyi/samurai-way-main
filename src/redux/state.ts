@@ -1,5 +1,14 @@
 import {DialogsItmPropsType, MessagesPropsType, PostsPropsType} from "../types";
-import {renderTree} from "../render";
+
+let renderTree = () => {
+  console.log('Hello');
+}
+
+export const subscribe = (callback: () => void) => {
+  renderTree = callback;
+}
+
+
 
 export type RootStateType = {
   blogPage: BlogPagePropsType,
@@ -18,7 +27,7 @@ type DialogsPagePropsType = {
 
 export let state:RootStateType = {
   blogPage: {
-    messageForNewPost: 'test',
+    messageForNewPost: '',
     posts: [
       {id: 1, img: 'https://via.placeholder.com/350x150', title: 'Post 1', descript: '1 Lorem ipsum lalala'},
       {id: 2, img: 'https://via.placeholder.com/350x150', title: 'Post 2', descript: '2 Lorem ipsum lalala'},
@@ -43,19 +52,29 @@ export let state:RootStateType = {
   }
 }
 
-export const addNewPost = (postMessage: string) => {
+export const addNewPost = () => {
   const newPost: PostsPropsType = {
     id: 5,
     img: 'https://via.placeholder.com/350x150',
     title: 'Post 5',
-    descript: postMessage
+    descript: state.blogPage.messageForNewPost
   }
   state.blogPage.posts.push(newPost);
+  state.blogPage.messageForNewPost = '';
+  renderTree();
+}
 
-  renderTree(state);
+export const addNewMessage = (newMsg:string) => {
+  const messagesCount = state.dialogsPage.messages.length;
+  const newMessage:MessagesPropsType = {
+    id: messagesCount + 1,
+    message: newMsg
+  }
+  state.dialogsPage.messages.splice(messagesCount, 0, newMessage);
+
 }
 
 export const changeText = (newText: string) => {
   state.blogPage.messageForNewPost = newText;
-  renderTree(state);
+  renderTree();
 }

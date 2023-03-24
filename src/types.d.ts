@@ -1,12 +1,14 @@
 export type AppStateType = {
   state: AppPropsType
   addNewPost: (postMessage: string) => void
+  addNewMessage: (newMsg:string) => void
 }
 export type MainWrapperType = {
   state: AppPropsType
   messageForNewPost: string
   addNewPost: (postMessage: string) => void
   changeText: (newText: string) => void
+  addNewMessage: (newMsg:string) => void
 }
 export type AppPropsType = {
   blogPage: BlogPagePropsType,
@@ -14,6 +16,7 @@ export type AppPropsType = {
 }
 export type DialogsStateType = {
   state: DialogsPropsType
+  addNewMessage: (newMsg:string) => void
 }
 export type DialogsPropsType = {
   dialogs: DialogsItmPropsType[],

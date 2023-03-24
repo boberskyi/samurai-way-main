@@ -14,10 +14,12 @@ export const Dialogs = (props: DialogsStateType) => {
 
   let onChangeMsg = (e:ChangeEvent<HTMLTextAreaElement>) => {
     setMsgText(e.currentTarget.value);
-    console.log(msgText);
   }
 
-  let onClickSend = () => alert(msgText);
+  let onClickSend = () => {
+    props.addNewMessage(msgText);
+    setMsgText('');
+  }
   return (
     <StyledDialogs>
       <StyledContainer>

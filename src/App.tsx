@@ -5,7 +5,7 @@ import {MainWrapper} from "./components/MainWrapper/MainWrapper";
 import {AppStateType} from "./types";
 import {changeText} from "./redux/state";
 
-const App:React.FC<AppStateType> = ({state, addNewPost}) => {
+const App:React.FC<AppStateType> = ({state, addNewPost, addNewMessage}) => {
   return (
       <main>
         <Header/>
@@ -14,6 +14,7 @@ const App:React.FC<AppStateType> = ({state, addNewPost}) => {
           addNewPost={addNewPost}
           messageForNewPost={state.blogPage.messageForNewPost}
           changeText={changeText}
+          addNewMessage={addNewMessage}
         />
       </main>
   );

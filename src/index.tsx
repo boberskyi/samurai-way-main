@@ -1,6 +1,19 @@
-import {state} from './redux/state'
+ import {addNewPost, addNewMessage, RootStateType, state, subscribe} from "./redux/state";
+import ReactDOM from "react-dom";
+import {BrowserRouter} from "react-router-dom";
+import App from "./App";
 import React from "react";
-import {renderTree} from "./render";
 
 
-renderTree(state);
+const renderTree = () => {
+
+  ReactDOM.render(
+    <BrowserRouter>
+      <App state={state} addNewPost={addNewPost} addNewMessage={addNewMessage} />
+    </BrowserRouter>, document.getElementById('root')
+  );
+}
+
+renderTree();
+
+ subscribe(renderTree)

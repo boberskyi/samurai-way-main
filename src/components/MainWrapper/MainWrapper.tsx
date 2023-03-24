@@ -18,6 +18,7 @@ export const MainWrapper:React.FC<MainWrapperType> = (props) => {
       />
       <Route path='/dialogs'
              render={() => <Dialogs state={props.state.dialogsPage}
+                                    addNewMessage={props.addNewMessage}
              />}
       />
       <Route path='/blog'
