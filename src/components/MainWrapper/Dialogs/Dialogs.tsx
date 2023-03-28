@@ -4,23 +4,27 @@ import {StyledContainer} from "../MainWrapper";
 import styled from "styled-components";
 import {DialogsStateType} from "../../../types";
 import {ChangeEvent, useState} from "react";
-import {AddMessageAC} from "../../../redux/state";
+import {AddMessageAC, UpdateMessageAC} from "../../../redux/state";
 
 export const Dialogs = (props: DialogsStateType) => {
 
   let dialogsElements = props.state.dialogs.map(d => <DialogItm key={d.id} id={d.id} ava={d.ava} name={d.name} online={d.online}/>);
   let messageElements = props.state.messages.map(m => <Message key={m.id} id={m.id} message={m.message}/>);
+  let newDialogMessage = props.state.newMessageBody;
 
-  let [msgText, setMsgText] = useState('');
+  //let [msgText, setMsgText] = useState('');
 
   let onChangeMsg = (e:ChangeEvent<HTMLTextAreaElement>) => {
-    setMsgText(e.currentTarget.value);
+    let newMsg = e.currentTarget.value;
+    props.dispatch(UpdateMessageAC(newMsg))
   }
 
   let onClickSend = () => {
-    props.dispatch(AddMessageAC(msgText))
+    props.dispatch(AddMessageAC());
+    props.dispatch(UpdateMessageAC(''))
     //props.addNewMessage(msgText);
-    setMsgText('');
+
+    //setMsgText('');
   }
   return (
     <StyledDialogs>
@@ -38,7 +42,7 @@ export const Dialogs = (props: DialogsStateType) => {
           <StyledDialogsRightWrap>
             <StyledDialogsMsgs>{messageElements}</StyledDialogsMsgs>
             <StyledDialogsSendControls>
-              <StyledMsgSend onChange={onChangeMsg} value={msgText}></StyledMsgSend>
+              <StyledMsgSend onChange={onChangeMsg} value={newDialogMessage}></StyledMsgSend>
               <StyledDialogsBtn onClick={onClickSend}>Send</StyledDialogsBtn>
             </StyledDialogsSendControls>
           </StyledDialogsRightWrap>

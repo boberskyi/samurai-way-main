@@ -27,7 +27,7 @@ export type StoreType = {
   dispatch: (action: ActionTypes) => void
 }
 
-export type ActionTypes = ReturnType<typeof AddPostAC> | ReturnType<typeof AddMessageAC> | ReturnType<typeof ChangeTextAC>;
+export type ActionTypes = ReturnType<typeof AddPostAC> | ReturnType<typeof AddMessageAC> | ReturnType<typeof ChangeTextAC> | ReturnType<typeof UpdateMessageAC>;
 
 export const ChangeTextAC = (newText:string) => {
   return {
@@ -36,9 +36,15 @@ export const ChangeTextAC = (newText:string) => {
   } as const
 }
 
-export const AddMessageAC = (newMsg:string) => {
+export const AddMessageAC = () => {
   return {
-    type: 'ADD-NEW-MESSAGE',
+    type: 'ADD-NEW-MESSAGE'
+  } as const
+}
+
+export const UpdateMessageAC = (newMsg:string) => {
+  return {
+    type: 'UPDATE-NEW-MESSAGE',
     newMsg: newMsg
   } as const
 }
@@ -156,13 +162,17 @@ const store: StoreType = {
       this._state.blogPage.posts.push(newPost);
       this._state.blogPage.messageForNewPost = '';
       this._onChange();
-    } else if (action.type === 'ADD-NEW-MESSAGE') {
+    } else if (action.type === 'UPDATE-NEW-MESSAGE') {
+      this._state.dialogsPage.newMessageBody = action.newMsg;
+      this._onChange();
+      } else if (action.type === 'ADD-NEW-MESSAGE') {
       const messagesCount = this._state.dialogsPage.messages.length;
       const newMessage: MessagesPropsType = {
         id: messagesCount + 1,
-        message: action.newMsg
+        message: this._state.dialogsPage.newMessageBody
       }
       this._state.dialogsPage.messages.push(newMessage);
+      this._onChange();
     } else if (action.type === 'CHANGE-TEXT') {
       this._state.blogPage.messageForNewPost = action.newText;
       this._onChange();

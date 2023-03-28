@@ -24,7 +24,8 @@ export type DialogsStateType = {
 }
 export type DialogsPropsType = {
   dialogs: DialogsItmPropsType[],
-  messages: MessagesPropsType[]
+  messages: MessagesPropsType[],
+  newMessageBody: string
 }
 export type DialogsItmPropsType = {
   id: number,
