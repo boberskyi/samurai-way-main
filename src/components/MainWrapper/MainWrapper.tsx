@@ -19,6 +19,7 @@ export const MainWrapper:React.FC<MainWrapperType> = (props) => {
       <Route path='/dialogs'
              render={() => <Dialogs state={props.state.dialogsPage}
                                     addNewMessage={props.addNewMessage}
+                                    dispatch={props.dispatch}
              />}
       />
       <Route path='/blog'
@@ -27,6 +28,7 @@ export const MainWrapper:React.FC<MainWrapperType> = (props) => {
                 addNewPost={props.addNewPost}
                 messageForNewPost={props.messageForNewPost}
                changeText={props.changeText}
+               dispatch={props.dispatch}
              />}
       />
       <Route path='/music'

@@ -3,6 +3,7 @@ import {StyledContainer} from "../MainWrapper";
 import styled from "styled-components";
 import {BlogPropsType} from "../../../types";
 import React from "react";
+import {AddPostAC, ChangeTextAC} from "../../../redux/state";
 
 
 
@@ -10,12 +11,16 @@ import React from "react";
 export const Blog = (props:BlogPropsType) => {
 
   const addPosts = () => {
-    props.addNewPost(props.messageForNewPost);
-    props.changeText('');
+    props.dispatch(AddPostAC(props.messageForNewPost));
+    //props.addNewPost(props.messageForNewPost);
+    props.dispatch(ChangeTextAC(''));
+    //props.changeText('');
+
   }
 
   const onChangeHandler = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
-    props.changeText(e.currentTarget.value);
+    props.dispatch(ChangeTextAC(e.currentTarget.value))
+    //props.changeText(e.currentTarget.value);
   }
 
 

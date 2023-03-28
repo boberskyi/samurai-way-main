@@ -4,6 +4,7 @@ import {StyledContainer} from "../MainWrapper";
 import styled from "styled-components";
 import {DialogsStateType} from "../../../types";
 import {ChangeEvent, useState} from "react";
+import {AddMessageAC} from "../../../redux/state";
 
 export const Dialogs = (props: DialogsStateType) => {
 
@@ -17,7 +18,8 @@ export const Dialogs = (props: DialogsStateType) => {
   }
 
   let onClickSend = () => {
-    props.addNewMessage(msgText);
+    props.dispatch(AddMessageAC(msgText))
+    //props.addNewMessage(msgText);
     setMsgText('');
   }
   return (

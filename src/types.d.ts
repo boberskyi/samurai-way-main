@@ -1,3 +1,5 @@
+import {ActionTypes} from "./redux/state";
+
 export type AppStateType = {
   state: AppPropsType
   addNewPost: (postMessage: string) => void
@@ -9,6 +11,7 @@ export type MainWrapperType = {
   addNewPost: (postMessage: string) => void
   changeText: (newText: string) => void
   addNewMessage: (newMsg:string) => void
+  dispatch: (action: ActionTypes) => void
 }
 export type AppPropsType = {
   blogPage: BlogPagePropsType,
@@ -17,6 +20,7 @@ export type AppPropsType = {
 export type DialogsStateType = {
   state: DialogsPropsType
   addNewMessage: (newMsg:string) => void
+  dispatch: (action: ActionTypes) => void
 }
 export type DialogsPropsType = {
   dialogs: DialogsItmPropsType[],
@@ -47,6 +51,7 @@ export type BlogPropsType = {
   messageForNewPost: string
   posts: PostsPropsType[]
   addNewPost: (postMessage: string) => void
+  dispatch: (action: ActionTypes) => void
 }
 export type PostPropsType = {
   posts: PostsPropsType[]
