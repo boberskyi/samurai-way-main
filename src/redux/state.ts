@@ -1,16 +1,18 @@
 import {DialogsItmPropsType, MessagesPropsType, PostsPropsType} from "../types";
+import {blogPageReducer} from "./blogPageReducer";
+import {dialgsPageReducer} from "./dialogsPageReducer";
 
 export type RootStateType = {
   blogPage: BlogPagePropsType,
   dialogsPage: DialogsPagePropsType
 }
 
-type BlogPagePropsType = {
+export type BlogPagePropsType = {
   messageForNewPost: string,
   posts: PostsPropsType[]
 }
 
-type DialogsPagePropsType = {
+export type DialogsPagePropsType = {
   dialogs: DialogsItmPropsType[],
   messages: MessagesPropsType[],
   newMessageBody: string
@@ -152,31 +154,10 @@ const store: StoreType = {
     return this._state;
   },
   dispatch(action) {
-    if (action.type === 'ADD-POST') {
-      const newPost: PostsPropsType = {
-        id: new Date().getTime(),
-        img: 'https://via.placeholder.com/350x150',
-        title: this._state.blogPage.messageForNewPost,
-        descript: 'Lorem ipsum lalalala'
-      }
-      this._state.blogPage.posts.push(newPost);
-      this._state.blogPage.messageForNewPost = '';
-      this._onChange();
-    } else if (action.type === 'UPDATE-NEW-MESSAGE') {
-      this._state.dialogsPage.newMessageBody = action.newMsg;
-      this._onChange();
-      } else if (action.type === 'ADD-NEW-MESSAGE') {
-      const messagesCount = this._state.dialogsPage.messages.length;
-      const newMessage: MessagesPropsType = {
-        id: messagesCount + 1,
-        message: this._state.dialogsPage.newMessageBody
-      }
-      this._state.dialogsPage.messages.push(newMessage);
-      this._onChange();
-    } else if (action.type === 'CHANGE-TEXT') {
-      this._state.blogPage.messageForNewPost = action.newText;
-      this._onChange();
-    }
+    this._state.blogPage = blogPageReducer(this._state.blogPage, action);
+    this._state.dialogsPage = dialgsPageReducer(this._state.dialogsPage, action);
+
+    this._onChange();
   }
 }
 
